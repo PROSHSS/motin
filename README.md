@@ -13,6 +13,20 @@ Depois que este código estiver no GitHub:
 
 O Codespaces pode consumir a cota da sua conta GitHub. Pare o ambiente quando terminar.
 
+### Se aparecer “recovery mode”
+
+Uma configuração inicial usava uma tag de imagem inexistente. Ela foi corrigida.
+Se você criou o Codespace antes da correção, execute no terminal:
+
+```bash
+git pull --ff-only origin main
+```
+
+Depois pressione **Ctrl+Shift+P**, procure **Codespaces: Rebuild Container**
+e execute. Aguarde a reconstrução antes de abrir a aba **Portas / Ports**.
+Se a reconstrução falhar novamente, o início do **Creation Log** contém o erro
+original; a mensagem “recovery mode” no final é apenas a consequência.
+
 Nas próximas vezes, reabra o **mesmo Codespace**. O código fica no editor online;
 você não precisa baixar um ZIP a cada melhoria. Se a prévia não abrir, execute
 `bash scripts/start-preview.sh` no terminal e abra a porta 3000.
