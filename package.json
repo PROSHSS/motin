@@ -1,0 +1,27 @@
+{
+  "name": "doc-video",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "preview": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts Documentario out/video.mp4 --concurrency=2",
+    "dev": "remotion studio src/index.ts --no-open",
+    "test": "node --experimental-strip-types --test tests/*.test.mjs",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run typecheck && npm test",
+    "render:smoke": "remotion render src/index.ts Documentario out/smoke.mp4 --frames=0-29 --concurrency=2"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.0",
+    "typescript": "^5.4.0"
+  },
+  "engines": {
+    "node": ">=24 <25"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "titulo": "Como funciona o segundo turno",
+  "cenas": [
+    {
+      "narracao": "O segundo turno decide quem governa o país pelos próximos quatro anos.",
+      "tipo": "texto",
+      "destaque": "Segundo turno"
+    },
+    {
+      "narracao": "No primeiro turno, o candidato mais votado ficou perto da maioria.",
+      "tipo": "barras",
+      "destaque": "47,03%"
+    },
+    {
+      "narracao": "Para vencer no primeiro turno, é preciso mais da metade dos votos válidos.",
+      "tipo": "barras",
+      "destaque": "50%"
+    },
+    {
+      "narracao": "O rival terminou logo atrás, com uma diferença pequena.",
+      "tipo": "barras",
+      "destaque": "45,16%"
+    },
+    {
+      "narracao": "Por isso a decisão vai para uma nova votação.",
+      "tipo": "texto",
+      "destaque": "25 de outubro"
+    },
+    {
+      "narracao": "No Congresso, mudar a Constituição exige três quintos dos votos.",
+      "tipo": "hemiciclo",
+      "destaque": "60%"
+    },
+    {
+      "narracao": "Isso significa um apoio muito maior que a simples maioria.",
+      "tipo": "hemiciclo",
+      "destaque": "3/5"
+    },
+    {
+      "narracao": "E é por isso que cada voto importa.",
+      "tipo": "texto",
+      "destaque": "Cada voto conta"
+    }
+  ]
+}

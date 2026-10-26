@@ -1,0 +1,9 @@
+node_modules/
+out/
+.cache/
+*.log
+.env
+.env.*
+!.env.example
+config.json
+.DS_Store

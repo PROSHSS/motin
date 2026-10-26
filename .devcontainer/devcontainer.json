@@ -1,0 +1,18 @@
+{
+  "name": "Motin — criação de vídeos",
+  "build": {"dockerfile": "Dockerfile"},
+  "remoteUser": "node",
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": {
+      "label": "Motin — prévia do vídeo",
+      "onAutoForward": "openBrowser",
+      "protocol": "http"
+    }
+  },
+  "containerEnv": {
+    "REMOTION_BROWSER_EXECUTABLE": "/usr/bin/chromium"
+  },
+  "postCreateCommand": "npm ci --no-audit --no-fund && npm run check",
+  "postStartCommand": "bash scripts/start-preview.sh"
+}

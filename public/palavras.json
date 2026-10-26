@@ -1,0 +1,412 @@
+[
+  {
+    "palavra": "O",
+    "inicio": 0.4,
+    "fim": 0.69
+  },
+  {
+    "palavra": "segundo",
+    "inicio": 0.69,
+    "fim": 1.04
+  },
+  {
+    "palavra": "turno",
+    "inicio": 1.04,
+    "fim": 1.37
+  },
+  {
+    "palavra": "decide",
+    "inicio": 1.37,
+    "fim": 1.71
+  },
+  {
+    "palavra": "quem",
+    "inicio": 1.71,
+    "fim": 2.03
+  },
+  {
+    "palavra": "governa",
+    "inicio": 2.03,
+    "fim": 2.38
+  },
+  {
+    "palavra": "o",
+    "inicio": 2.38,
+    "fim": 2.67
+  },
+  {
+    "palavra": "país",
+    "inicio": 2.67,
+    "fim": 2.99
+  },
+  {
+    "palavra": "pelos",
+    "inicio": 2.99,
+    "fim": 3.32
+  },
+  {
+    "palavra": "próximos",
+    "inicio": 3.32,
+    "fim": 3.68
+  },
+  {
+    "palavra": "quatro",
+    "inicio": 3.68,
+    "fim": 4.02
+  },
+  {
+    "palavra": "anos.",
+    "inicio": 4.02,
+    "fim": 4.35
+  },
+  {
+    "palavra": "No",
+    "inicio": 4.75,
+    "fim": 5.05
+  },
+  {
+    "palavra": "primeiro",
+    "inicio": 5.05,
+    "fim": 5.41
+  },
+  {
+    "palavra": "turno,",
+    "inicio": 5.41,
+    "fim": 5.75
+  },
+  {
+    "palavra": "o",
+    "inicio": 5.75,
+    "fim": 6.04
+  },
+  {
+    "palavra": "candidato",
+    "inicio": 6.04,
+    "fim": 6.41
+  },
+  {
+    "palavra": "mais",
+    "inicio": 6.41,
+    "fim": 6.73
+  },
+  {
+    "palavra": "votado",
+    "inicio": 6.73,
+    "fim": 7.07
+  },
+  {
+    "palavra": "ficou",
+    "inicio": 7.07,
+    "fim": 7.4
+  },
+  {
+    "palavra": "perto",
+    "inicio": 7.4,
+    "fim": 7.73
+  },
+  {
+    "palavra": "da",
+    "inicio": 7.73,
+    "fim": 8.03
+  },
+  {
+    "palavra": "maioria.",
+    "inicio": 8.03,
+    "fim": 8.39
+  },
+  {
+    "palavra": "Para",
+    "inicio": 8.79,
+    "fim": 9.11
+  },
+  {
+    "palavra": "vencer",
+    "inicio": 9.11,
+    "fim": 9.45
+  },
+  {
+    "palavra": "no",
+    "inicio": 9.45,
+    "fim": 9.75
+  },
+  {
+    "palavra": "primeiro",
+    "inicio": 9.75,
+    "fim": 10.11
+  },
+  {
+    "palavra": "turno,",
+    "inicio": 10.11,
+    "fim": 10.45
+  },
+  {
+    "palavra": "é",
+    "inicio": 10.45,
+    "fim": 10.74
+  },
+  {
+    "palavra": "preciso",
+    "inicio": 10.74,
+    "fim": 11.09
+  },
+  {
+    "palavra": "mais",
+    "inicio": 11.09,
+    "fim": 11.41
+  },
+  {
+    "palavra": "da",
+    "inicio": 11.41,
+    "fim": 11.71
+  },
+  {
+    "palavra": "metade",
+    "inicio": 11.71,
+    "fim": 12.05
+  },
+  {
+    "palavra": "dos",
+    "inicio": 12.05,
+    "fim": 12.36
+  },
+  {
+    "palavra": "votos",
+    "inicio": 12.36,
+    "fim": 12.69
+  },
+  {
+    "palavra": "válidos.",
+    "inicio": 12.69,
+    "fim": 13.05
+  },
+  {
+    "palavra": "O",
+    "inicio": 13.45,
+    "fim": 13.74
+  },
+  {
+    "palavra": "rival",
+    "inicio": 13.74,
+    "fim": 14.07
+  },
+  {
+    "palavra": "terminou",
+    "inicio": 14.07,
+    "fim": 14.43
+  },
+  {
+    "palavra": "logo",
+    "inicio": 14.43,
+    "fim": 14.75
+  },
+  {
+    "palavra": "atrás,",
+    "inicio": 14.75,
+    "fim": 15.09
+  },
+  {
+    "palavra": "com",
+    "inicio": 15.09,
+    "fim": 15.4
+  },
+  {
+    "palavra": "uma",
+    "inicio": 15.4,
+    "fim": 15.71
+  },
+  {
+    "palavra": "diferença",
+    "inicio": 15.71,
+    "fim": 16.08
+  },
+  {
+    "palavra": "pequena.",
+    "inicio": 16.08,
+    "fim": 16.44
+  },
+  {
+    "palavra": "Por",
+    "inicio": 16.84,
+    "fim": 17.15
+  },
+  {
+    "palavra": "isso",
+    "inicio": 17.15,
+    "fim": 17.47
+  },
+  {
+    "palavra": "a",
+    "inicio": 17.47,
+    "fim": 17.76
+  },
+  {
+    "palavra": "decisão",
+    "inicio": 17.76,
+    "fim": 18.11
+  },
+  {
+    "palavra": "vai",
+    "inicio": 18.11,
+    "fim": 18.42
+  },
+  {
+    "palavra": "para",
+    "inicio": 18.42,
+    "fim": 18.74
+  },
+  {
+    "palavra": "uma",
+    "inicio": 18.74,
+    "fim": 19.05
+  },
+  {
+    "palavra": "nova",
+    "inicio": 19.05,
+    "fim": 19.37
+  },
+  {
+    "palavra": "votação.",
+    "inicio": 19.37,
+    "fim": 19.73
+  },
+  {
+    "palavra": "No",
+    "inicio": 20.13,
+    "fim": 20.43
+  },
+  {
+    "palavra": "Congresso,",
+    "inicio": 20.43,
+    "fim": 20.81
+  },
+  {
+    "palavra": "mudar",
+    "inicio": 20.81,
+    "fim": 21.14
+  },
+  {
+    "palavra": "a",
+    "inicio": 21.14,
+    "fim": 21.43
+  },
+  {
+    "palavra": "Constituição",
+    "inicio": 21.43,
+    "fim": 21.83
+  },
+  {
+    "palavra": "exige",
+    "inicio": 21.83,
+    "fim": 22.16
+  },
+  {
+    "palavra": "três",
+    "inicio": 22.16,
+    "fim": 22.48
+  },
+  {
+    "palavra": "quintos",
+    "inicio": 22.48,
+    "fim": 22.83
+  },
+  {
+    "palavra": "dos",
+    "inicio": 22.83,
+    "fim": 23.14
+  },
+  {
+    "palavra": "votos.",
+    "inicio": 23.14,
+    "fim": 23.48
+  },
+  {
+    "palavra": "Isso",
+    "inicio": 23.88,
+    "fim": 24.2
+  },
+  {
+    "palavra": "significa",
+    "inicio": 24.2,
+    "fim": 24.57
+  },
+  {
+    "palavra": "um",
+    "inicio": 24.57,
+    "fim": 24.87
+  },
+  {
+    "palavra": "apoio",
+    "inicio": 24.87,
+    "fim": 25.2
+  },
+  {
+    "palavra": "muito",
+    "inicio": 25.2,
+    "fim": 25.53
+  },
+  {
+    "palavra": "maior",
+    "inicio": 25.53,
+    "fim": 25.86
+  },
+  {
+    "palavra": "que",
+    "inicio": 25.86,
+    "fim": 26.17
+  },
+  {
+    "palavra": "a",
+    "inicio": 26.17,
+    "fim": 26.46
+  },
+  {
+    "palavra": "simples",
+    "inicio": 26.46,
+    "fim": 26.81
+  },
+  {
+    "palavra": "maioria.",
+    "inicio": 26.81,
+    "fim": 27.17
+  },
+  {
+    "palavra": "E",
+    "inicio": 27.57,
+    "fim": 27.86
+  },
+  {
+    "palavra": "é",
+    "inicio": 27.86,
+    "fim": 28.15
+  },
+  {
+    "palavra": "por",
+    "inicio": 28.15,
+    "fim": 28.46
+  },
+  {
+    "palavra": "isso",
+    "inicio": 28.46,
+    "fim": 28.78
+  },
+  {
+    "palavra": "que",
+    "inicio": 28.78,
+    "fim": 29.09
+  },
+  {
+    "palavra": "cada",
+    "inicio": 29.09,
+    "fim": 29.41
+  },
+  {
+    "palavra": "voto",
+    "inicio": 29.41,
+    "fim": 29.73
+  },
+  {
+    "palavra": "importa.",
+    "inicio": 29.73,
+    "fim": 30.09
+  }
+]
