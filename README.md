@@ -1,83 +1,111 @@
-# Motin — criação de vídeos
+# Motion — editor de vídeos com personagem narrador
 
-Projeto Remotion para montar vídeos verticais com narração, legendas e gráficos.
+O editor local está em **`editor/`**, com os personagens, o suporte à voz de referência,
+as variações de motion e as legendas transparentes do pacote atualizado.
+A prévia anterior no navegador foi preservada separadamente em `src/`.
 
-## Testar sem baixar o código
+## Abrir o painel no Windows
 
-Depois que este código estiver no GitHub:
+**O site do GitHub guarda o código; clicar em um `.bat` no site mostra seu
+conteúdo, sem executar o programa.** O painel completo continua rodando no PC.
+O GitHub Pages também não executa o servidor Python deste painel.
 
-1. No repositório, clique em **Code → Codespaces → Create codespace**.
-2. Aguarde a preparação inicial. O ambiente instala as dependências e inicia a prévia.
-3. Na aba **Ports**, abra a porta **3000** no navegador, mantendo a visibilidade privada.
-4. No Remotion Studio, selecione **Documentario** e use o botão de reprodução.
+Se o editor já funciona no seu PC, mantenha a instalação atual:
 
-O Codespaces pode consumir a cota da sua conta GitHub. Pare o ambiente quando terminar.
+1. Baixe por **Code → Download ZIP** e extraia.
+2. Copie o **conteúdo de `editor/`** para a pasta onde seu editor já está instalado,
+   substituindo os arquivos do programa. Não substitua `config.json`, projetos,
+   vídeos, ambientes Python nem modelos: eles não vêm nesta atualização.
+3. Abra o `painel.bat` da sua instalação normalmente.
 
-### Se aparecer “recovery mode”
+Para receber as próximas alterações sem baixar vários ZIPs, use o GitHub Desktop
+ou clone uma única cópia de trabalho:
 
-Uma configuração inicial usava uma tag de imagem inexistente. Ela foi corrigida.
-Se você criou o Codespace antes da correção, execute no terminal:
-
-```bash
-git pull --ff-only origin main
+```powershell
+git clone https://github.com/PROSHSS/motin.git
 ```
 
-Depois pressione **Ctrl+Shift+P**, procure **Codespaces: Rebuild Container**
-e execute. Aguarde a reconstrução antes de abrir a aba **Portas / Ports**.
-Se a reconstrução falhar novamente, o início do **Creation Log** contém o erro
-original; a mensagem “recovery mode” no final é apenas a consequência.
+O `painel.bat` na raiz é um atalho para o painel em `editor/`. Essa pasta precisa
+ter as dependências da sua instalação: Node/Remotion (`npm ci` dentro de
+`editor/`), Python, FFmpeg, Ollama e o ambiente/modelos da voz. Mantenha também
+seu `config.json` nessa pasta. Copie a pasta **`vozes/` da instalação que você já
+usa** para `editor/vozes/` para manter a voz aprovada. As gravações pessoais não
+fazem parte desta versão pública. Os detalhes estão em `editor/INSTALAR.txt` e
+`editor/LEIA_PRIMEIRO_PERSONAGENS.txt`.
 
-Nas próximas vezes, reabra o **mesmo Codespace**. O código fica no editor online;
-você não precisa baixar um ZIP a cada melhoria. Se a prévia não abrir, execute
-`bash scripts/start-preview.sh` no terminal e abra a porta 3000.
+O pacote atualizado pressupõe a instalação base existente. Arquivos opcionais
+de motores antigos, como `tts_kokoro.py` e `align.py`, não estavam no pacote
+enviado; preserve os que já existem no seu PC se você usa esses recursos.
 
-## Onde fazer alterações
+## Atualizar uma cópia clonada
 
-| Arquivo | O que altera |
+Com o painel fechado e os trabalhos terminados, abra `atualizar.bat` na raiz.
+Ele usa `git pull --ff-only` e interrompe a atualização se houver alterações
+locais nos arquivos do programa, sem forçar a substituição.
+
+Projetos, vídeos, dependências e configurações locais estão no `.gitignore`.
+**Download ZIP** não cria uma cópia Git: nesse caso, copie os arquivos manualmente
+ou use o GitHub Desktop para começar a trabalhar com o repositório.
+
+## Espaço no computador
+
+O GitHub facilita guardar e atualizar o código. Ele não transfere automaticamente
+a execução nem os arquivos grandes para a nuvem. Modelos de voz, modelos do
+Ollama, ambientes Python e vídeos ainda ocupam espaço onde a geração acontece.
+Não apague esses arquivos da instalação que você usa.
+
+O editor já aceita `pasta_dados` no `editor/config.json` para guardar projetos e
+saídas em outro disco. Por exemplo, `"pasta_dados": "D:/Motion-dados"` usa essa
+pasta para novos trabalhos. Isso não move automaticamente os projetos antigos.
+
+## Prévia no navegador com Codespaces
+
+A prévia anterior em `src/` e `public/` permite editar e exportar um vídeo de
+exemplo em Remotion. Ela abre **sem áudio**, porque a gravação não acompanha o
+repositório público. Para usar uma narração local autorizada, coloque o WAV em
+`public/narracao.wav` e altere `public/audio.json` para `{"narracao": true}`.
+As gravações e os vídeos estão ignorados pelo Git.
+
+**Essa prévia não é o painel completo e não inclui a geração
+automática com Ollama, Cloudflare e voz.** O Codespaces usa Linux e não executa
+`painel.bat` como o Windows.
+
+No repositório, abra **Code → Codespaces → Create codespace**. No terminal:
+
+```bash
+npm ci
+npm run dev -- --port=3000
+```
+
+Abra a porta **3000** na aba **Ports**, mantendo a visibilidade privada, e
+selecione **Documentario**. Também é possível iniciar com
+`bash scripts/start-preview.sh`. O Codespaces usa a cota/plano da sua conta;
+pare o ambiente quando terminar.
+
+Para conferir e exportar a prévia:
+
+```bash
+npm run check
+npm run render:smoke
+npm run render
+```
+
+Use Node.js 24. Se houver Chromium em `/usr/bin/chromium`, ele será usado no
+Linux; outro caminho pode ser indicado em `REMOTION_BROWSER_EXECUTABLE`.
+As melhorias anteriores dessa prévia estão em `MELHORIAS.md`.
+
+## Organização
+
+| Caminho | Conteúdo |
 | --- | --- |
-| `src/Video.tsx` | Visual, cenas, gráficos e legendas |
-| `src/Root.tsx` | Composição, carregamento e duração |
-| `public/roteiro.json` | Título e conteúdo das cenas |
-| `public/tempos_cenas.json` | Início e fim de cada cena, em segundos |
-| `public/palavras.json` | Palavras e tempos das legendas |
-| `public/narracao.wav` | Áudio da narração |
+| `painel.bat` | Atalho para abrir o editor local no Windows |
+| `atualizar.bat` | Atualiza uma cópia clonada sem forçar mudanças locais |
+| `editor/` | Editor completo do pacote atualizado |
+| `editor/src/showcase/` | Animações da edição principal |
+| `editor/assets/mascotes/` | Expressões do personagem |
+| `editor/vozes/` | Instruções para restaurar a referência da sua instalação local |
+| `src/` e `public/` | Prévia independente com o exemplo anterior |
+| `tests/data.test.mjs` | Validação dos dados da prévia |
 
-Salve o arquivo no editor para atualizar a prévia. Após mudar arquivos de `public/`,
-recarregue a página para carregar os dados novos. Os tempos devem corresponder ao áudio.
-
-Antes de trocar dados ou alterar código, crie uma branch no painel Source Control.
-Depois de testar, faça **Commit** e **Push/Sync Changes** para guardar a alteração
-no GitHub. Salvar no editor muda o Codespace; enviar ao GitHub permite recuperar
-o trabalho em outro ambiente. Não publique credenciais ou `config.json`.
-
-Se uma melhoria for enviada ao GitHub a partir de outro ambiente, salve e envie
-primeiro suas mudanças locais; depois use **Pull** na mesma branch para recebê-la.
-O GitHub não sincroniza automaticamente o conteúdo de um Codespace já aberto.
-
-## Verificar e exportar
-
-No terminal:
-
-```bash
-npm run check          # TypeScript e testes de dados
-npm run render:smoke   # Exporta um segundo para out/smoke.mp4
-npm run render         # Exporta o vídeo completo para out/video.mp4
-```
-
-Você só precisa baixar o MP4 quando quiser guardar ou compartilhar o vídeo final.
-A prévia no navegador serve para testar as alterações sem exportar tudo.
-Ela pode ser menos fluida que o vídeo exportado, dependendo da máquina.
-
-## Executar fora do Codespaces
-
-Use Node.js 24, rode `npm ci` e depois `npm run dev`.
-O Chromium instalado em `/usr/bin/chromium` é usado automaticamente no Linux.
-Em outro caminho, configure `REMOTION_BROWSER_EXECUTABLE`; sem navegador instalado,
-o Remotion usará seu fluxo padrão de download.
-
-## Escopo
-
-Esta versão contém a composição Documentario do ZIP enviado, com melhorias de
-legendas, visual e validação. Os dados de exemplo são preservados, sem verificação
-editorial. Geração automática com Ollama, Cloudflare e voz não está integrada aqui.
-Consulte `MELHORIAS.md` para os detalhes das alterações anteriores.
+Os dados do vídeo de exemplo foram preservados; o repositório não representa
+verificação editorial dos fatos narrados nesse exemplo.

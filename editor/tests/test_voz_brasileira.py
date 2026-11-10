@@ -6,6 +6,7 @@ import sys
 import tempfile
 import types
 import unittest
+import wave
 from pathlib import Path
 from unittest.mock import patch
 
@@ -17,6 +18,20 @@ import voz_referencia
 
 
 class VozBrasileiraTests(unittest.TestCase):
+    def setUp(self):
+        # Os testes usam um WAV sintético, sem depender da gravação pessoal.
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        referencia = Path(tmp.name) / 'referencia-teste.wav'
+        with wave.open(str(referencia), 'wb') as arquivo:
+            arquivo.setnchannels(1)
+            arquivo.setsampwidth(2)
+            arquivo.setframerate(24000)
+            arquivo.writeframes(b'\x00\x00' * 24000 * 4)
+        for modulo in (voz_referencia, tts_mascote):
+            p = patch.object(modulo, 'carregar_referencia', return_value=(referencia, 'Referência de teste.'))
+            p.start()
+            self.addCleanup(p.stop)
 
 
     def test_cenas_repetidas_seguem_a_gravacao_sem_inserir_pausa(self):

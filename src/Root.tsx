@@ -22,16 +22,17 @@ export const Root: React.FC = () => {
       durationInFrames={FPS * 60}
       defaultProps={{roteiro: {titulo: '', cenas: []}, tempos: [], palavras: []} as VideoProps}
       calculateMetadata={async () => {
-        const [roteiro, tempos, palavras] = await Promise.all([
+        const [roteiro, tempos, palavras, audio] = await Promise.all([
           load('roteiro.json'),
           load('tempos_cenas.json'),
           load('palavras.json'),
+          load('audio.json').catch(() => ({})),
         ]);
         const data = validateData(roteiro, tempos, palavras);
         const fim = Math.max(...data.tempos.map((t) => t.fim), ...data.palavras.map((p) => p.fim));
         return {
           durationInFrames: Math.ceil((fim + 0.5) * FPS),
-          props: data,
+          props: {...data, narracao: typeof audio === 'object' && audio !== null && 'narracao' in audio && audio.narracao === true},
         };
       }}
     />

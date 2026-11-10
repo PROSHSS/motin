@@ -20,6 +20,7 @@ export type VideoProps = {
   roteiro: {titulo: string; cenas: Cena[]};
   tempos: Tempo[];
   palavras: Palavra[];
+  narracao?: boolean;
 };
 
 // ---------- ESTILO ----------
@@ -281,7 +282,7 @@ const Legenda: React.FC<{palavras: Palavra[]}> = ({palavras}) => {
 };
 
 // ---------- VÍDEO ----------
-export const Video: React.FC<VideoProps> = ({roteiro, tempos, palavras}) => {
+export const Video: React.FC<VideoProps> = ({roteiro, tempos, palavras, narracao = false}) => {
   const {fps} = useVideoConfig();
   const frame = useCurrentFrame();
   const total = roteiro.cenas.length;
@@ -299,7 +300,7 @@ export const Video: React.FC<VideoProps> = ({roteiro, tempos, palavras}) => {
 
   return (
     <AbsoluteFill style={{backgroundColor: BG, backgroundImage: 'radial-gradient(ellipse at 50% 35%, #24202a 0%, #0a0a0c 75%)'}}>
-      <Audio src={staticFile('narracao.wav')} />
+      {narracao ? <Audio src={staticFile('narracao.wav')} /> : null}
       {roteiro.cenas.map((cena, i) => {
         const t = tempos[i];
         if (!t) return null;

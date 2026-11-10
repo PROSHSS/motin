@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "dev": "remotion studio src/index.ts",
     "preview": "remotion studio src/index.ts",
+    "check": "tsc --noEmit && node --experimental-strip-types --test tests/data.test.mjs",
+    "render:smoke": "remotion render src/index.ts Documentario out/smoke.mp4 --frames=0-29 --concurrency=2",
     "render": "remotion render src/index.ts Documentario out/video.mp4 --concurrency=4"
   },
   "dependencies": {
