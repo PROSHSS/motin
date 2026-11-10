@@ -1,0 +1,19 @@
+LEGENDAS COM FUNDO TRANSPARENTE
+
+Foi removido o degradê preto que aparecia na parte inferior do vídeo junto
+com a fala. Os outros estilos de legenda também ficam sem caixas, bordas
+de caixa ou fundos atrás das palavras. O texto mantém destaque na palavra
+falada e um contorno/sombra discreto somente nas letras para facilitar a leitura.
+
+COMO ATUALIZAR
+1. Espere os trabalhos terminarem e feche o painel.
+2. Extraia este ZIP na mesma pasta do editor, substituindo os arquivos.
+3. Abra painel.bat normalmente.
+
+Novos vídeos já usam as legendas transparentes.
+Para aplicar a correção em um vídeo existente, use Meus vídeos >
+Atualizar edição · manter voz e aguarde a nova exportação terminar.
+Um MP4 já exportado precisa ser exportado novamente para receber a correção.
+
+A voz, os tempos da fala, os personagens, as mídias e as variações de motion
+foram preservados. Não é necessário instalar dependências novas.

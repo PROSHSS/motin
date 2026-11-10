@@ -1,0 +1,30 @@
+{
+  "descricao": "Claro, dourado, elegante (promoções, preço, consumo)",
+  "paleta": [
+    "ouro",
+    "laranja"
+  ],
+  "gancho": [
+    "etiqueta",
+    "carimbo"
+  ],
+  "preferir": [
+    "lupa",
+    "processo",
+    "grafico",
+    "comparacao",
+    "contador"
+  ],
+  "evitar": [
+    "linha_tempo"
+  ],
+  "ritmo": 1.0,
+  "nome": "varejo_ouro",
+  "classicas": [
+    "cinetica",
+    "frase",
+    "lista_caixas",
+    "imagem"
+  ],
+  "mistura": 0.3
+}

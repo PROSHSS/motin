@@ -1,0 +1,32 @@
+{
+  "descricao": "Claro com azul (dinheiro, investimento, economia)",
+  "paleta": [
+    "oceano",
+    "menta"
+  ],
+  "gancho": [
+    "etiqueta",
+    "digitando"
+  ],
+  "preferir": [
+    "grafico",
+    "contador",
+    "comparacao",
+    "ranking",
+    "processo"
+  ],
+  "evitar": [
+    "celular"
+  ],
+  "ritmo": 1.05,
+  "nome": "financas_azul",
+  "classicas": [
+    "numero_gigante",
+    "grafico_barras",
+    "grafico_linha",
+    "rosca",
+    "painel",
+    "frase"
+  ],
+  "mistura": 0.4
+}

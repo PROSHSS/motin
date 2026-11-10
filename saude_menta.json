@@ -1,0 +1,31 @@
+{
+  "descricao": "Claro menta (saúde, bem-estar, hábitos)",
+  "paleta": [
+    "menta",
+    "oceano"
+  ],
+  "gancho": [
+    "digitando",
+    "etiqueta"
+  ],
+  "preferir": [
+    "checklist",
+    "rajada",
+    "contador",
+    "comparacao",
+    "citacao"
+  ],
+  "evitar": [
+    "alerta"
+  ],
+  "ritmo": 1.0,
+  "nome": "saude_menta",
+  "classicas": [
+    "imagem",
+    "explicativa",
+    "lista_caixas",
+    "silhuetas",
+    "frase"
+  ],
+  "mistura": 0.4
+}

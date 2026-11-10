@@ -1,0 +1,99 @@
+EDITOR COM PERSONAGENS — VOZ A PARTIR DA SUA REFERÊNCIA (V6)
+
+O QUE MUDOU
+A narração agora é gerada por clonagem local com Qwen3-TTS Base, usando o
+áudio enviado e a transcrição exata. Não utiliza mais Thalita ou Antônio e
+não tenta criar a voz apenas alterando o tom de uma voz pronta.
+A intenção é aproximar o timbre, o ritmo e a expressão da referência em
+português brasileiro. Não há garantia de uma reprodução idêntica: o texto
+novo e o modelo podem mudar a pronúncia, as pausas e a emoção.
+
+INSTALAÇÃO NO SEU PC
+1. Feche o painel e espere qualquer vídeo em andamento terminar.
+2. Extraia este pacote na mesma pasta do editor, substituindo os arquivos.
+   Copie também as pastas assets, vozes e amostras.
+3. Execute o NOVO instalar_voz_mascote.bat, mesmo que instalou a voz anterior.
+   Ele cria um ambiente separado .venv-voz e baixa os modelos públicos.
+   Não altera o Python nem as dependências dos outros motores do editor.
+4. Abra painel.bat e clique em Ouvir voz para comparar com sua referência.
+
+Requisitos: Windows de 64 bits e Python 3.10 a 3.12 (recomendado 3.12).
+Recomendado: pelo menos 16 GB de RAM e 7 GB livres para ambiente e modelos.
+O download inicial dos MODELOS tem cerca de 2,6 GB, além das dependências.
+Depois da instalação, a síntese e o alinhamento das legendas são locais.
+A voz é gerada no processador; pode levar minutos por vídeo, dependendo do PC.
+Placa de vídeo não é exigida por esta configuração.
+O áudio de referência e a narrativa não são enviados a serviços de síntese.
+FFmpeg/ffprobe e Node continuam necessários para os vídeos do editor.
+O filtro rubberband não é mais necessário para esta narração.
+
+Mantenha config.json, projetos, saidas, musicas, voz_referencia.wav,
+align.py e tts_kokoro.py do seu editor. Eles não são substituídos pelo pacote.
+Não apague as pastas .venv-voz e modelos-voz depois de instalar.
+Se o download falhar, execute o instalador novamente para retomá-lo.
+
+NARRAR UM VÍDEO
+1. Digite o tema e envie um MP4 no campo de fotos e vídeos.
+2. Em Narrativa pronta, escreva a fala, uma linha por cena.
+3. Ative o personagem, escolha Vídeo enviado, em movimento, e marque
+   Usar exatamente minha narrativa.
+4. Escolha canto inferior esquerdo, direito ou os dois. Ajuste o tamanho.
+5. A voz selecionada é Sua referência — Português brasileiro.
+   Ouvir voz gera uma frase nova usando a mesma referência do vídeo.
+6. Clique em OK — criar o vídeo e acompanhe em Meus vídeos.
+
+As frases são sintetizadas juntas, sem montar uma gravação separada por cena.
+O ritmo e as pausas vêm da síntese condicionada pela sua referência e pelo
+texto. Não há mudança de pitch, velocidade ou equalização no novo motor.
+Whisper local alinha as legendas; a grafia continua sendo a do roteiro.
+Se o alinhamento não for confiável, só os tempos das legendas são estimados.
+
+PERSONAGENS E FUNDO
+- As 12 poses transparentes, animações e configurações foram preservadas.
+- Escolha uma expressão fixa ou troca automática conforme o texto.
+- Adicionar troca > Cena aplica a pose naquela cena.
+- Adicionar troca > Frame aplica do frame escolhido até a próxima troca.
+  Frame 0 = início; 30 = 1 segundo; 90 = 3 segundos (30 fps).
+- Trocas por frame têm prioridade sobre trocas por cena.
+- Nos dois cantos, cada lado pode ter sua própria expressão; a narração é uma só.
+- O vídeo de fundo permanece em movimento. As legendas ficam acima do boneco.
+- Som original começa em 0% e pode ser aumentado até 35%.
+- O editor não interpreta automaticamente o que acontece no vídeo. Escreva
+  o que o personagem deve explicar ou use o gerador de roteiro existente.
+- A animação é de poses; não há sincronização labial.
+
+SUA REFERÊNCIA
+O pacote inclui vozes/referencia_usuario.wav, com aproximadamente 6,8 segundos,
+e vozes/referencia.json com a transcrição exata do áudio que você enviou.
+O MP3 original não foi alterado. O WAV preserva a fala, convertido para mono
+24 kHz para leitura pelo modelo, sem modificar tom ou velocidade.
+Para melhorar a aproximação, forneça uma gravação limpa de 15 a 30 segundos,
+sem música ou outras vozes, mantendo a mesma maneira de falar que deseja.
+Não precisa reenviar para usar esta versão: a referência atual já funciona.
+
+Se trocar o WAV manualmente, atualize também arquivo e transcricao em
+vozes/referencia.json. A transcrição precisa corresponder ao áudio inteiro.
+Use WAV com 3 a 30 segundos. A mudança é detectada e invalida a narração antiga.
+
+ATUALIZAR UM VÍDEO PRONTO
+Em Meus vídeos, clique em Refazer com voz de referência.
+Os perfis antigos migram para a referência atual; as demais opções ficam salvas.
+A narração anterior só é substituída quando a nova síntese termina.
+O MP4 anterior é preservado até a nova renderização ter sucesso.
+Se faltar ambiente, modelo ou referência, o processo informa o erro; não troca
+silenciosamente por uma voz pronta de outro narrador.
+
+AMOSTRA E VERIFICAÇÃO
+amostras/Amostra_voz_referencia.mp3 contém fala nova gerada com este código,
+condicionada pela gravação enviada. Não é uma cópia do áudio de referência.
+Foram verificados 15 testes automatizados e geração real no processador,
+roteiro contínuo de três cenas (8,8 segundos),
+tempos e legendas, migração de perfis, invalidação do cache e preservação dos
+arquivos anteriores quando há falha. Os testes de integração da renderização
+foram executados; o MP4 completo não foi reexportado nesta atualização.
+A instalação foi validada em Linux com Python 3.12. O instalador Windows foi
+preparado para os mesmos pacotes, mas não foi executado em um PC Windows aqui.
+
+Testes: python -m unittest discover -s tests -v
+Implementação: https://github.com/QwenLM/Qwen3-TTS
+Alinhamento: https://github.com/SYSTRAN/faster-whisper

@@ -1,0 +1,71 @@
+MOTION FLUIDO V8 — MONTAGENS DIFERENTES POR VÍDEO
+
+A versão anterior já alternava onze famílias de cena dentro do mesmo vídeo.
+Esta atualização mantém aquele visual e acrescenta memória entre projetos,
+variações internas de composição e demonstrações ligadas ao sentido da fala.
+
+COMO ATUALIZAR
+Feche o painel, espere os trabalhos terminarem e extraia este ZIP na mesma
+pasta do editor, substituindo os arquivos. Abra painel.bat normalmente.
+A escolha Motion fluido · Novo continua sendo a edição principal.
+A atualização usa as dependências existentes e o SQLite do próprio Python.
+A voz e os personagens aprovados foram preservados.
+
+COMO A VARIEDADE FUNCIONA
+- Cada projeto recebe uma direção visual própria, com uma combinação de
+  composições, variações, cores, entradas e movimentos de câmera.
+- A escolha considera o texto de cada cena, os dados reais do roteiro,
+  as mídias disponíveis e as montagens exportadas recentemente.
+- Uma mesma família pode mudar a disposição, escala, formato das telas,
+  tipografia e organização dos elementos. As variantes podem compartilhar
+  componentes, como em uma biblioteca de motion design.
+- Os exemplos demonstrativos incluem busca, proteção, conversa, percurso,
+  construção por camadas, conexão, transformação e etapas.
+- Há vocabulário visual para tecnologia, finanças, saúde, mobilidade,
+  impressão 3D, história, natureza e culinária, além da direção geral.
+- Gráficos e documentos continuam nas composições específicas. Comparações
+  e números do roteiro preservam seus valores; variedade visual não cria dados.
+- Títulos e rótulos vêm da narrativa e dos campos já conferidos do roteiro.
+- A entrada de elementos acompanha os tempos das palavras quando disponíveis.
+
+REEXPORTAR OU CRIAR OUTRA MONTAGEM
+Reexportar o mesmo projeto conserva sua direção atual. Assim, um render
+interrompido pode ser retomado sem trocar os visuais a cada tentativa.
+Em Meus vídeos, Nova variação · manter voz pede outra direção para o mesmo
+roteiro. O botão usa o áudio existente e não pede uma nova síntese de voz.
+Atualizar edição · manter voz aplica a revisão mantendo a direção já salva,
+quando compatível com esta versão.
+O arquivo anterior é substituído depois de a nova exportação ter sucesso.
+A memória visual registra montagens concluídas, sem contar renders que falharam.
+
+MANTER A MEMÓRIA
+Conserve a pasta de projetos e memoria_motion.sqlite3 na pasta de dados do
+editor. O projeto guarda sua direção em direcao_motion.json. Esses arquivos
+são criados no seu PC e não são substituídos pelo ZIP.
+A memória vale para a instalação e pasta de dados utilizadas; uma instalação
+nova inicia seu próprio histórico.
+
+O QUE ESPERAR
+O repertório é finito. Famílias, ícones e recursos podem voltar a aparecer,
+com outras combinações e movimentos. Não há garantia de repetição zero nem
+criação de código de animação ilimitado para qualquer assunto.
+A interpretação visual desta versão parte do roteiro, por regras de tema e
+sentido. Nem toda nuance ou assunto desconhecido será interpretado corretamente.
+As filmagens continuam sendo os seus clipes. A escolha de uma cena ou trecho
+ajuda a relacioná-los com a fala; não foi adicionada análise automática das
+imagens dos vídeos. As interfaces desenhadas são exemplos ilustrativos.
+
+VERIFICAÇÃO
+42 testes automatizados passaram, incluindo estabilidade do mesmo projeto,
+novos pedidos de variação, histórico, temas, rótulos, dados originais, clipes,
+preservação de voz e falha de render sem substituir o vídeo anterior.
+Em uma simulação de direção com 20 sementes, foram produzidas 20 combinações
+distintas de família, variante, corte e cor. É uma amostra, não uma prova de
+variedade infinita ou de compreensão perfeita do assunto.
+Foram renderizados 29 quadros para revisar as variantes e demonstrações.
+A comparação MP4 usa o mesmo roteiro e o mesmo áudio aprovado em dois projetos.
+Os tempos de palavras dessa comparação vieram da prévia curta anterior,
+com alinhamento estimado. O clipe de apoio é o trecho da referência descrito
+em LEIA_MOTION_FLUIDO.txt. A comparação é uma demonstração de variação visual.
+A verificação foi feita em Linux; a execução no seu PC Windows usa a estrutura
+existente do editor e os mesmos pacotes.

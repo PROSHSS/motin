@@ -1,0 +1,76 @@
+ATUALIZAÇÃO V8: leia também LEIA_VARIACOES_AUTOMATICAS.txt.
+As famílias descritas abaixo continuam disponíveis com novas variações.
+
+EDIÇÃO PRINCIPAL — MOTION FLUIDO (V7)
+
+COMO ATUALIZAR
+1. Feche o painel e aguarde os vídeos em andamento terminarem.
+2. Extraia este ZIP na mesma pasta do editor, substituindo os arquivos.
+   Copie também src, assets, vozes e amostras. Mantenha config.json, projetos,
+   saidas, musicas, node_modules, .venv-voz, modelos-voz e seus outros arquivos.
+3. Abra painel.bat. Em Edição principal, escolha Motion fluido — Novo.
+4. Para a edição principal sem apresentador, desmarque Ativar personagem.
+   Os controles do personagem e a voz aprovada continuam disponíveis.
+Se a voz já funciona na versão anterior, esta atualização não exige reinstalá-la.
+Se estiver instalando o editor pela primeira vez, siga INSTALAR.txt e o guia da voz.
+
+O QUE A NOVA EDIÇÃO FAZ
+- Onze famílias de composição: abertura tipográfica, transformação de objeto,
+  interface demonstrativa, colagem, conexões, recortes, tipografia editorial,
+  comparação, etapas, vídeo cinematográfico e números do próprio roteiro.
+- Movimento de câmera por elemento, profundidade, máscaras de revelação,
+  desenhos vetoriais progressivos, cursor e entradas com desaceleração suave.
+- A direção escolhe os visuais conforme o texto, as mídias disponíveis e o
+  histórico das cenas. Evita repetir a mesma composição em cenas consecutivas.
+- Os momentos de entrada acompanham os tempos das palavras da narração.
+  Se o alinhamento for estimado, a sincronização visual também será aproximada.
+- As novas narrações no modo Motion dispensam o alongamento artificial das
+  cenas usado na edição anterior. Vídeos existentes mantêm seu áudio salvo.
+- Legendas compactas destacam a palavra falada. Textos de apoio redundantes
+  são ocultados quando as legendas estão presentes.
+- Fundos claros e escuros alternam com contraste adequado. Gráficos, rankings,
+  linhas do tempo e documentos preservam suas informações e cenas específicas.
+
+VÍDEOS EM MOVIMENTO
+- Envie vídeos em Fotos e vídeos do assunto. Agora eles entram como clipes
+  reais na edição principal, além dos usos já existentes com o personagem.
+- O campo Cena fixa o vídeo numa cena específica. Um vídeo fixo por cena.
+- Início e Fim escolhem o trecho em segundos. Em branco, usa o arquivo inteiro.
+- Sem número de cena, os clipes são distribuídos em ordem, alternando com
+  outras composições. Ao reutilizar um clipe longo, o próximo uso avança o trecho.
+- Um trecho curto pode repetir para cobrir toda a fala. O áudio original do
+  clipe fica mudo na edição principal para dar espaço à narração.
+- A relação entre o clipe e o assunto depende dos vídeos que você envia e da
+  cena escolhida. A direção não interpreta automaticamente o conteúdo filmado.
+- As animações de interfaces e objetos são desenhadas pelo editor. As filmagens
+  vêm dos seus arquivos; as fotos continuam usando as fontes já configuradas.
+- Vídeos antigos guardados como cenaN_*.mp4 ou envioNN_*.mp4 no projeto são
+  reconhecidos para reutilização em movimento, preservando os arquivos originais.
+
+ATUALIZAR UM VÍDEO PRONTO
+Em Meus vídeos, use Atualizar edição · manter voz nos projetos da edição principal.
+A ação pede nova renderização e mantém a narração existente. O vídeo anterior
+é substituído somente depois de a nova renderização terminar com sucesso.
+Pelo terminal: python criar.py "Seu tema" --rerender
+Para voltar ao visual anterior, escolha Documentário anterior no painel.
+No config.json, a opção equivalente é "edicao": "anterior" (novo padrão: "motion").
+
+PRÉVIAS E VERIFICAÇÃO
+A prévia narrada reutiliza a amostra de voz aprovada, com cerca de nove segundos,
+e demonstra três composições do novo diretor. Os tempos das legendas dessa
+prévia curta foram estimados a partir dos trechos da amostra.
+O mostruário mostra as onze famílias, em vídeo sem narração. É uma demonstração
+visual de layouts, com seleção explícita dos tipos para mostrar todos eles.
+As duas prévias usam um trecho de 3,4 a 7,4 segundos da referência enviada
+baeb741a13cdee79801123a20720b709.mp4, com enquadramento da área de filme.
+A referência identifica o criador como Arslan Kharal (@arslan.kharal14).
+Esse clipe é usado nas prévias; seus próximos vídeos usam as mídias do projeto.
+
+Foram executados 29 testes automatizados, compilação TypeScript, renderização
+real de quadros das onze composições e exportação das prévias MP4. A configuração
+Windows foi preparada a partir do editor existente; a execução desta revisão
+foi feita em Linux. Arquivos da voz aprovada e do personagem foram comparados
+com a versão anterior e preservados byte a byte.
+Testes: python -m unittest discover -s tests -v
+
+As referências e os recursos aproveitados estão em REFERENCIAS_MOTION.txt.

@@ -1,0 +1,31 @@
+{
+  "descricao": "Claro lavanda (dicas, ideias, curiosidades)",
+  "paleta": [
+    "lavanda",
+    "oceano",
+    "laranja"
+  ],
+  "gancho": [
+    "digitando",
+    "etiqueta",
+    "carimbo"
+  ],
+  "preferir": [
+    "rajada",
+    "ranking",
+    "citacao",
+    "linha_tempo",
+    "checklist"
+  ],
+  "evitar": [],
+  "ritmo": 1.0,
+  "nome": "criativo_lavanda",
+  "classicas": [
+    "cinetica",
+    "frase",
+    "lista_caixas",
+    "explicativa",
+    "imagem"
+  ],
+  "mistura": 0.4
+}
