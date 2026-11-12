@@ -9,6 +9,7 @@ import unicodedata
 from collections import Counter
 from contextlib import contextmanager
 from pathlib import Path
+from motion_inteligencia import assinatura_visual
 
 VERSAO_DIRECAO='direcao-contextual-v8.1'
 DOMINIOS={
@@ -91,7 +92,7 @@ def registrar_sucesso(dados,proj,base):
  """Chamado apenas depois de o MP4 ter sido exportado e substituído com sucesso."""
  ctx=dados.get('direcao_motion')
  if not ctx:return False
- plano={'id':ctx['id'],'dominio':ctx.get('dominio','geral'),'cor':ctx.get('cor'),'abertura':dados['cenas'][0].get('motion',{}).get('layout') if dados.get('cenas') else None,'cenas':[{'layout':c.get('motion',{}).get('layout'),'variante':c.get('motion',{}).get('variante',0),'acao':c.get('motion',{}).get('acao'),'corte':c.get('motion',{}).get('corte',0)} for c in dados.get('cenas',[])]}
+ plano={'id':ctx['id'],'dominio':ctx.get('dominio','geral'),'cor':ctx.get('cor'),'abertura':dados['cenas'][0].get('motion',{}).get('layout') if dados.get('cenas') else None,'cenas':[{'layout':c.get('motion',{}).get('layout'),'variante':c.get('motion',{}).get('variante',0),'acao':c.get('motion',{}).get('acao'),'corte':c.get('motion',{}).get('corte',0),'assinatura':assinatura_visual(c.get('motion',{})),'foco':c.get('motion',{}).get('foco'),'densidade':c.get('motion',{}).get('densidade'),'movimento':c.get('motion',{}).get('movimento')} for c in dados.get('cenas',[])]}
  try:
   with _db(base) as db:db.execute('INSERT OR IGNORE INTO montagens(id,projeto,plano) VALUES(?,?,?)',(ctx['id'],str(Path(proj).resolve()),json.dumps(plano,ensure_ascii=False)))
   return True
@@ -114,7 +115,18 @@ def detalhes_visual(c,i,plano,layouts):
  variante=min(variantes,key=lambda v:(sum(s.get('variante',0)==v for s in hist[:8]),numero_aleatorio(seed,'variante',i,layout,v)))
  corte=int(numero_aleatorio(seed,'corte',i)*4)%4
  if i and corte==layouts[-1].get('corte'):corte=(corte+1)%4
- m=c['motion'];m.update({'dominio':dom,'acao':act,'variante':variante,'acento':plano['cor'],'corte':corte,'camera':int(numero_aleatorio(seed,'camera',i)*4)%4,'velocidade':.88+numero_aleatorio(seed,'ritmo',i)*.24})
+ m=c['motion']
+ foco=int(numero_aleatorio(seed,'foco',i,layout)*3)%3
+ densidade=int(numero_aleatorio(seed,'densidade',i,layout)*3)%3
+ movimento=int(numero_aleatorio(seed,'movimento',i,layout)*4)%4
+ assinatura=f'{layout}|{variante}|{corte}|{foco}|{densidade}|{movimento}'
+ # A estrutura, e nao somente a paleta, pesa no historico.
+ assinaturas_recentes=[s.get('assinatura') for h in plano['historico'][:5] for s in h.get('cenas',[])]
+ if assinatura in assinaturas_recentes:
+  foco=(foco+1)%3
+ if layouts and layouts[-1].get('layout')==layout and layouts[-1].get('variante')==variante:
+  variante=(variante+1)%3
+ m.update({'dominio':dom,'acao':act,'variante':variante,'acento':plano['cor'],'corte':corte,'camera':int(numero_aleatorio(seed,'camera',i)*4)%4,'velocidade':.88+numero_aleatorio(seed,'ritmo',i)*.24,'foco':foco,'densidade':densidade,'movimento':movimento})
  claro=int(numero_aleatorio(seed,'luz',i)*4)==0
  if len(layouts)>=2 and layouts[-1].get('claro')==layouts[-2].get('claro')==claro:claro=not claro
  m['claro']=claro
