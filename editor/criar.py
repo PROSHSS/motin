@@ -52,6 +52,8 @@ PADRAO = {
     "polir_voz": True,            # acabamento de estudio na voz (compressao/EQ). false = voz crua
     "legenda": "documentario",    # "documentario" (texto branco com sombra) | "pilula" (caixa)
     "edicao": "motion",
+    "intensidade_motion": "equilibrado",
+    "variedade_motion": "criativa",
     "camada_documentario": True,  # camera com tremor leve, zoom nas frases, vinheta, cor de cinema, barra de progresso
     "som_transicao": True,        # false = sem o som de deslize nas trocas de cena
     "volume_musica": 1.0,         # 0.5 = mais baixa | 1.0 = padrao | 1.5 = mais alta
@@ -142,6 +144,12 @@ def carregar_config():
     for k, v in ov.items():
         if k == "motion_pedido" and isinstance(v,str) and re.fullmatch(r"[0-9a-f]{16,40}",v):
             cfg[k]=v
+            continue
+        if k == "intensidade_motion" and v in ("suave", "equilibrado", "dinamico"):
+            cfg[k] = v
+            continue
+        if k == "variedade_motion" and v in ("consistente", "criativa", "maxima"):
+            cfg[k] = v
             continue
         if k == "edicao" and v in ("motion", "anterior"):
             cfg[k] = v
@@ -1314,6 +1322,10 @@ def produzir_showcase(tema, args, cfg, env):
     modo_edicao=cfg.get('edicao','motion') if not tem_video_mascote else 'anterior'
     from motion_variacao import preparar_direcao, registrar_sucesso
     contexto_direcao=preparar_direcao(dados,proj,base,cfg.get('motion_pedido','')) if modo_edicao=='motion' else None
+    if contexto_direcao:
+        contexto_direcao={**contexto_direcao,
+                          'intensidade_motion':cfg.get('intensidade_motion','equilibrado'),
+                          'variedade_motion':cfg.get('variedade_motion','criativa')}
     dirigir(dados,json.loads((proj/'tempos_cenas.json').read_text(encoding='utf-8')),json.loads((proj/'palavras.json').read_text(encoding='utf-8')),modo_edicao,contexto=contexto_direcao)
     nova_edicao=assinatura_edicao(dados,proj,modo_edicao)
     marcador_edicao=proj/'.edicao_motion'
