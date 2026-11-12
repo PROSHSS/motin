@@ -1,6 +1,8 @@
 """Gera dados sinteticos, SEM AUDIO, para renderizar as 3 novas composicoes."""
 import json
+import sys
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import motion_editor
 
 root = Path(__file__).resolve().parents[1]
