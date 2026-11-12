@@ -9,8 +9,9 @@ import unicodedata
 from collections import Counter
 from pathlib import Path
 from motion_variacao import planejar_variedade, detalhes_visual, numero_aleatorio, acao
+from motion_inteligencia import analisar_roteiro, adequacao, escolher_cenas_midia
 VERSAO_MOTION='motion-contextual-v8.1'
-LAYOUTS=('impacto','morph','interface','colagem','orbita','recorte','tipografia','comparativo','sequencia','editorial','dados','demonstracao')
+LAYOUTS=('impacto','morph','interface','colagem','orbita','recorte','tipografia','comparativo','sequencia','editorial','dados','demonstracao','palavra','dividida','profundidade')
 STOP=set('a o as os um uma de da do das dos e em no na nos nas por para com que se ao aos ou mas mais como seu sua seus suas esse essa isso este esta aqui voce vai vou ele ela muito'.split())
 
 STOP.update('quer pesquise proteja converse transforme observe imprima percorra assista acompanhe aprenda entenda deixe veja mostre traga use conecte construa misture alterne continue repare precisa acompanhar querer fazer mostrar sendo esta deve pode cada todo toda sem agora'.split())
@@ -79,30 +80,30 @@ def preparar_midias(proj,dados):
             c['video'].update({'automatico':m.get('cena') is None,'trecho_inicio':m['inicio'],'trecho_fim':m['fim']})
             c['credito_video']='Vídeo enviado pelo autor'
 
-def escolher(c,i,n,uso,recentes,plano=None):
+def escolher(c,i,n,uso,recentes,plano=None,analise=None):
     plano=plano or {'semente':1,'historico':[]}
     t=norm(c.get('narracao',''));act=acao(t,c)
     if c.get('tipo') in ('grafico','ranking','fato_documento','linha_tempo') or (c.get('cena') or {}).get('tipo') in ('documento','numero_gigante','grafico_barras','grafico_linha','rosca','painel','versus'):return 'original'
     if c.get('numero') or c.get('contador'):return 'dados'
     if c.get('comparacao'):return 'comparativo'
     if c.get('recorte'):op=['recorte','colagem','editorial']
-    elif c.get('video'):op=['editorial','colagem']
-    elif i==0:op=['impacto','tipografia']+(['demonstracao'] if act!='observar' else [])
-    elif act=='etapas':op=['sequencia','demonstracao','morph']
-    elif act in ('proteger','buscar','produzir','percorrer','comunicar'):op=['demonstracao','morph','interface'] if plano.get('dominio')=='tecnologia' else ['demonstracao','morph','tipografia']
+    elif c.get('video'):op=['editorial','colagem','dividida','profundidade']
+    elif i==0:op=['impacto','tipografia','palavra']+(['demonstracao'] if act!='observar' else [])
+    elif act=='etapas':op=['sequencia','demonstracao','morph','profundidade']
+    elif act in ('proteger','buscar','produzir','percorrer','comunicar'):op=['demonstracao','morph','interface','profundidade'] if plano.get('dominio')=='tecnologia' else ['demonstracao','morph','tipografia','profundidade']
     elif any(x in t for x in ('aplicativo','celular','tela','toque','clique','configur')):op=['interface','demonstracao','sequencia','morph']
-    elif act=='transformar':op=['morph','demonstracao','comparativo','tipografia']
-    elif act=='conectar':op=['orbita','demonstracao','morph']
-    elif c.get('foto'):op=['colagem','editorial','tipografia']
-    elif i==n-1:op=['tipografia','impacto','morph']
-    else:op=['morph','tipografia','impacto','orbita','demonstracao']
-    if n>=7 and i>1 and not any(c.get(x) for x in ('video','numero','contador','comparacao')) and all(uso[x] for x in op):op += [x for x in ('orbita','tipografia','impacto','demonstracao','morph') if x not in op and not uso[x]][:2]
+    elif act=='transformar':op=['morph','demonstracao','comparativo','tipografia','palavra']
+    elif act=='conectar':op=['orbita','demonstracao','morph','profundidade']
+    elif c.get('foto'):op=['colagem','editorial','tipografia','dividida','profundidade']
+    elif i==n-1:op=['tipografia','impacto','morph','palavra']
+    else:op=['morph','tipografia','impacto','orbita','demonstracao','palavra','profundidade']
+    if n>=7 and i>1 and not any(c.get(x) for x in ('video','numero','contador','comparacao')) and all(uso[x] for x in op):op += [x for x in ('orbita','tipografia','impacto','demonstracao','morph','palavra','profundidade') if x not in op and not uso[x]][:2]
     livres=[x for x in op if x not in recentes[-2:]] or [x for x in op if x not in recentes[-1:]] or op
     historico=plano.get('historico',[])[:6]
     def custo(x):
         passado=sum(sum(z.get('layout')==x for z in h.get('cenas',[]))/(k+2) for k,h in enumerate(historico))
         aberturas=sum(h.get('abertura')==x for h in historico[:3]) if i==0 else 0
-        return uso[x]*3+passado*.55+aberturas*2+op.index(x)*.06+numero_aleatorio(plano['semente'],'layout',i,x)*1.2
+        return uso[x]*3+passado*.55+aberturas*2+op.index(x)*.06+numero_aleatorio(plano['semente'],'layout',i,x)*1.2-adequacao(x,analise,c,i,n)*.48
     return min(livres,key=custo)
 
 def dirigir(dados,tempos,palavras,modo='motion',contexto=None):
@@ -113,10 +114,11 @@ def dirigir(dados,tempos,palavras,modo='motion',contexto=None):
         return dados
     plano=planejar_variedade(dados,contexto)
     fps=int(dados.get('fps') or 30);uso=Counter();recentes=[];cursores={};visuais=[]
+    analises=analisar_roteiro(dados['cenas'])
     for i,c in enumerate(dados['cenas']):
         nar=c.get('narracao','')
         if not c.get('foto') and (c.get('cena') or {}).get('imagem'):c['foto']=c['cena']['imagem']
-        layout=escolher(c,i,len(dados['cenas']),uso,recentes,plano);uso[layout]+=1;recentes.append(layout)
+        layout=escolher(c,i,len(dados['cenas']),uso,recentes,plano,analises[i]);uso[layout]+=1;recentes.append(layout)
         tp=tempos[i] if i<len(tempos) else {'inicio':sum(x.get('duracao',3) for x in dados['cenas'][:i]),'fim':sum(x.get('duracao',3) for x in dados['cenas'][:i+1])}
         ini=0 if i==0 else max(0,round(tp['inicio']*fps)-9)/fps;dur=max(.5,tp['fim']-ini)
         v=c.get('video')
@@ -136,7 +138,7 @@ def dirigir(dados,tempos,palavras,modo='motion',contexto=None):
         if not titulo or len(titulo)>80 or not set(tokens(titulo)).issubset(set(tokens(nar))):
             titulo=re.split(r'(?<=[.!?])\s+',nar)[0]
             if len(titulo)>80:titulo=partes[0] if partes else nar
-        c['motion']={'layout':layout,'claro':i%4==2,'indice':i,'titulo':titulo,'chaves':chaves(nar),'icone':icone(nar),'batidas':batidas,'duracao':round(dur,4),'legendas':bool(palavras),'versao':VERSAO_MOTION}
+        c['motion']={'layout':layout,'claro':i%4==2,'indice':i,'titulo':titulo,'chaves':chaves(nar),'icone':icone(nar),'batidas':batidas,'duracao':round(dur,4),'legendas':bool(palavras),'versao':VERSAO_MOTION,'intencao':analises[i]['intencao'],'intensidade':analises[i]['intensidade']}
         detalhes_visual(c,i,plano,visuais)
         visuais.append(c['motion'])
     return dados
