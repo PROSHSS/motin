@@ -108,6 +108,8 @@ progress{width:100%;height:10px;margin-top:10px;display:none}
 <div><label>Pesquisar na internet</label><select name="pesquisar" id="pesquisar"><option value="sim">Sim (fontes e datas atuais)</option><option value="nao">Não (usar só o que escrevi)</option></select></div>
 <div><label>Edição principal</label><select name="edicao" id="edicao"><option value="motion">Motion fluido · Novo</option><option value="anterior">Documentário anterior</option></select></div>
 <div><label>Estilo das imagens de IA</label><select name="estilo" id="estilo"><option value="realista">Realista (foto documental)</option><option value="cinematografico">Cinematográfico</option><option value="editorial">Editorial (revista)</option></select></div>
+<div><label>Movimento do Motion</label><select name="intensidade_motion" id="intensidade_motion"><option value="suave">Suave</option><option value="equilibrado" selected>Equilibrado</option><option value="dinamico">Dinâmico</option></select></div>
+<div><label>Variedade de composição</label><select name="variedade_motion" id="variedade_motion"><option value="consistente">Consistente</option><option value="criativa" selected>Criativa</option><option value="maxima">Máxima</option></select></div>
 </div>
 
 __MASCOTE_PAINEL__
@@ -126,12 +128,12 @@ if(FALTA_CF)$("#cf").style.display="block";
 $("#cfok").onclick=async()=>{const fd=new FormData();fd.set("token",TOKEN);fd.set("cfid",$("#cfid").value);fd.set("cftk",$("#cftk").value);
  const r=await fetch("/cloudflare",{method:"POST",body:fd});const j=await r.json();if(j.ok){$("#cf").style.display="none"}else alert(j.erro)};
 // rascunho
-const CAMPOS=["tema","lote","descricao","narrativa","serio","duracao","pesquisar","estilo","edicao"];
+const CAMPOS=["tema","lote","descricao","narrativa","serio","duracao","pesquisar","estilo","edicao","intensidade_motion","variedade_motion"];
 function salvar(){try{const o={};CAMPOS.forEach(k=>o[k]=$("#"+k).value);localStorage.setItem("painel_rascunho",JSON.stringify(o))}catch(_){}}
 function carregar(){try{const o=JSON.parse(localStorage.getItem("painel_rascunho")||"{}");CAMPOS.forEach(k=>{if(o[k]!==undefined)$("#"+k).value=o[k]})}catch(_){}}
 function contar(){[["tema","c1",160],["descricao","c2",3000],["narrativa","c3",12000],["lote","c4",4000]].forEach(([i,c,m])=>{$("#"+c).textContent=$("#"+i).value.length+"/"+m})}
 carregar();contar();CAMPOS.forEach(k=>$("#"+k).addEventListener("input",()=>{salvar();contar()}));
-$("#limpar").onclick=()=>{try{localStorage.removeItem("painel_rascunho")}catch(_){};CAMPOS.forEach(k=>{$("#"+k).value=$("#"+k).defaultValue||(k==="duracao"?"medio":"")});$("#serio").value="auto";$("#pesquisar").value="sim";$("#estilo").value="realista";$("#edicao").value="motion";arqs=[];draw();contar();window.mascoteEditor?.limpar()};
+$("#limpar").onclick=()=>{try{localStorage.removeItem("painel_rascunho")}catch(_){};CAMPOS.forEach(k=>{$("#"+k).value=$("#"+k).defaultValue||(k==="duracao"?"medio":"")});$("#serio").value="auto";$("#pesquisar").value="sim";$("#estilo").value="realista";$("#edicao").value="motion";$("#intensidade_motion").value="equilibrado";$("#variedade_motion").value="criativa";arqs=[];draw();contar();window.mascoteEditor?.limpar()};
 // arquivos
 let arqs=[];const drop=$("#drop"),inp=$("#arq");
 const ext=n=>(n.split(".").pop()||"").toLowerCase();
@@ -332,6 +334,10 @@ def criar_trabalho(campos, arquivos):
     if campos.get("pesquisar") == "nao":
         cmd.append("--sem-pesquisa")
     ajustes={'edicao':campos.get('edicao') if campos.get('edicao') in ('motion','anterior') else 'motion'}
+    if campos.get('intensidade_motion') in ('suave','equilibrado','dinamico'):
+        ajustes['intensidade_motion']=campos['intensidade_motion']
+    if campos.get('variedade_motion') in ('consistente','criativa','maxima'):
+        ajustes['variedade_motion']=campos['variedade_motion']
     if cfg_mascote['ativo']:
         ajustes.update({'mascote_voz': cfg_mascote['voz'], 'ritmo_fala': 1.0})
     if cfg_mascote['ativo'] and cfg_mascote['fundo'] == 'video':
