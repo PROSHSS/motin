@@ -126,7 +126,7 @@ def detalhes_visual(c,i,plano,layouts):
   foco=(foco+1)%3
  if layouts and layouts[-1].get('layout')==layout and layouts[-1].get('variante')==variante:
   variante=(variante+1)%3
- m.update({'dominio':dom,'acao':act,'variante':variante,'acento':plano['cor'],'corte':corte,'camera':int(numero_aleatorio(seed,'camera',i)*4)%4,'velocidade':.88+numero_aleatorio(seed,'ritmo',i)*.24,'foco':foco,'densidade':densidade,'movimento':movimento,'intensidade':plano.get('intensidade_motion','equilibrado')})
+ m.update({'dominio':dom,'acao':act,'variante':variante,'acento':plano['cor'],'corte':corte,'camera':int(numero_aleatorio(seed,'camera',i)*4)%4,'velocidade':.88+numero_aleatorio(seed,'ritmo',i)*.24,'foco':foco,'densidade':densidade,'movimento':movimento,'movimento_intensidade':plano.get('intensidade_motion','equilibrado')})
  claro=int(numero_aleatorio(seed,'luz',i)*4)==0
  if len(layouts)>=2 and layouts[-1].get('claro')==layouts[-2].get('claro')==claro:claro=not claro
  m['claro']=claro
