@@ -112,7 +112,7 @@ def escolher(c,i,n,uso,recentes,plano=None,analise=None):
     def custo(x):
         passado=sum(sum(z.get('layout')==x for z in h.get('cenas',[]))/(k+2) for k,h in enumerate(historico))
         aberturas=sum(h.get('abertura')==x for h in historico[:3]) if i==0 else 0
-        return uso[x]*3+passado*.55+aberturas*2+op.index(x)*.06+numero_aleatorio(plano['semente'],'layout',i,x)*1.2-adequacao(x,analise,c,i,n)*.48
+        return uso[x]*{'consistente':2,'criativa':3,'maxima':4}.get(plano.get('variedade_motion','criativa'),3)+passado*.55+aberturas*2+op.index(x)*.06+numero_aleatorio(plano['semente'],'layout',i,x)*1.2-adequacao(x,analise,c,i,n)*.48
     return min(livres,key=custo)
 
 def dirigir(dados,tempos,palavras,modo='motion',contexto=None):
