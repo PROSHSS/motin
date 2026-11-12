@@ -37,3 +37,9 @@ jobs:
       - name: Compilar TypeScript sem emitir
         working-directory: editor
         run: npx tsc --noEmit
+      - name: Gerar roteiro sintético de 3 cenas
+        working-directory: editor
+        run: python tests/gerar_preview_motion_pro.py
+      - name: Renderizar MP4 de teste real
+        working-directory: editor
+        run: npx remotion render src/index.ts Showcase /tmp/motion-pro-smoke.mp4 --frames=0-179 --concurrency=2 --log=error
