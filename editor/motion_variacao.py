@@ -106,7 +106,7 @@ def planejar_variedade(dados,ctx=None):
  recentes=[p.get('cor') for p in hist[:3]]
  cor=min(paletas,key=lambda x:(recentes.count(x),numero_aleatorio(seed,'cor',x)))
  if ctx:dados['direcao_motion']={k:ctx[k] for k in ('id','versao','semente','dominio')};dados['direcao_motion']['cor']=cor
- return {'semente':seed,'historico':hist,'dominio':dom,'cor':cor}
+ return {'semente':seed,'historico':hist,'dominio':dom,'cor':cor,'intensidade_motion':(ctx or {}).get('intensidade_motion','equilibrado'),'variedade_motion':(ctx or {}).get('variedade_motion','criativa')}
 
 def detalhes_visual(c,i,plano,layouts):
  dom=dominio(c.get('narracao',''),plano['dominio']);act=acao(c.get('narracao',''),c);seed=plano['semente'];layout=c['motion']['layout']
@@ -126,7 +126,7 @@ def detalhes_visual(c,i,plano,layouts):
   foco=(foco+1)%3
  if layouts and layouts[-1].get('layout')==layout and layouts[-1].get('variante')==variante:
   variante=(variante+1)%3
- m.update({'dominio':dom,'acao':act,'variante':variante,'acento':plano['cor'],'corte':corte,'camera':int(numero_aleatorio(seed,'camera',i)*4)%4,'velocidade':.88+numero_aleatorio(seed,'ritmo',i)*.24,'foco':foco,'densidade':densidade,'movimento':movimento})
+ m.update({'dominio':dom,'acao':act,'variante':variante,'acento':plano['cor'],'corte':corte,'camera':int(numero_aleatorio(seed,'camera',i)*4)%4,'velocidade':.88+numero_aleatorio(seed,'ritmo',i)*.24,'foco':foco,'densidade':densidade,'movimento':movimento,'intensidade':plano.get('intensidade_motion','equilibrado')})
  claro=int(numero_aleatorio(seed,'luz',i)*4)==0
  if len(layouts)>=2 and layouts[-1].get('claro')==layouts[-2].get('claro')==claro:claro=not claro
  m['claro']=claro
