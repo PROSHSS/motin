@@ -71,10 +71,19 @@ def preparar_midias(proj,dados):
         if m.get('cena') is None:livres.append(m)
         elif int(m['cena']) in fixos:raise ValueError('Use apenas um vídeo fixo por cena.')
         else:fixos[int(m['cena'])]=m
+    # Busca afinidade de assunto quando arquivo ou metadados permitem.
+    # Sem rotulos, mantem distribuicao anterior dos projetos ja existentes.
+    mapa=escolher_cenas_midia(dados['cenas'],livres) if livres else {}
+    por_cena={indice:livres[j] for j,indice in mapa.items()}
+    sem_rotulo=not mapa and not any(
+        m.get('descricao') or m.get('etiquetas') for m in livres
+    )
     j=0
     for i,c in enumerate(dados['cenas']):
-        m=fixos.get(i+1)
-        if m is None and livres and (i%2==1 or len(dados['cenas'])==1):m=livres[j%len(livres)];j+=1
+        m=fixos.get(i+1) or por_cena.get(i)
+        if m is None and livres and sem_rotulo and (i%2==1 or len(dados['cenas'])==1):
+            m=livres[j%len(livres)]
+            j+=1
         if m:
             c['video']={k:copy.deepcopy(m[k]) for k in ('arquivo','inicio','fim','duracao')}
             c['video'].update({'automatico':m.get('cena') is None,'trecho_inicio':m['inicio'],'trecho_fim':m['fim']})
