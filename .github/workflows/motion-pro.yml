@@ -1,0 +1,45 @@
+name: Motion Pro - validação
+
+on:
+  push:
+    branches:
+      - feature/motion-pro-2-direcao-contextual
+  pull_request:
+    paths:
+      - "editor/**"
+      - ".github/workflows/motion-pro.yml"
+
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Obter código
+        uses: actions/checkout@v4
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validar sintaxe Python
+        run: python -m compileall -q editor
+      - name: Testar o diretor de edição
+        working-directory: editor
+        run: python -m unittest discover -s tests -p 'test_motion_pro*.py' -v
+      - name: Configurar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: editor/package-lock.json
+      - name: Instalar dependências do Remotion
+        working-directory: editor
+        run: npm ci
+      - name: Compilar TypeScript sem emitir
+        working-directory: editor
+        run: npx tsc --noEmit
+      - name: Gerar roteiro sintético de 3 cenas
+        working-directory: editor
+        run: python tests/gerar_preview_motion_pro.py
+      - name: Renderizar MP4 de teste real
+        working-directory: editor
+        run: npx remotion render src/index.ts Showcase /tmp/motion-pro-smoke.mp4 --frames=0-160 --concurrency=2 --log=error
