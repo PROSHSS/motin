@@ -9,7 +9,7 @@ export type Parte = {t: string; e: 'forte' | 'fina' | 'serifa' | 'mini'; tam?: n
 export type Linha = Parte[];
 export type MidiaMotion={arquivo:string;inicio:number;fim:number;duracao:number};
 export type BatidaMotion={texto:string;em:number;icone:string};
-export type PlanoMotion={variante?:number;dominio?:string;acao?:string;acento?:string;corte?:number;camera?:number;velocidade?:number;objetos?:{texto:string;icone:string;em:number}[];layout:string;claro:boolean;indice:number;titulo:string;chaves:string[];icone:string;batidas:BatidaMotion[];duracao:number;legendas?:boolean;versao:string};
+export type PlanoMotion={intencao?:string;intensidade?:string;foco?:number;densidade?:number;movimento?:number;variante?:number;dominio?:string;acao?:string;acento?:string;corte?:number;camera?:number;velocidade?:number;objetos?:{texto:string;icone:string;em:number}[];layout:string;claro:boolean;indice:number;titulo:string;chaves:string[];icone:string;batidas:BatidaMotion[];duracao:number;legendas?:boolean;versao:string};
 export type CenaSC = {
   video?:MidiaMotion;
   motion?:PlanoMotion;
