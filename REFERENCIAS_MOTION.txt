@@ -1,0 +1,33 @@
+DIREÇÃO VISUAL A PARTIR DAS NOVE REFERÊNCIAS ENVIADAS
+
+0d4a224a328069a58798f85667b26735.mp4
+  Contraste entre telas claras e escuras, ícones iluminados e entradas de selos.
+  Aplicação: transformação de objeto, dados e contraste dos elementos.
+2b682819858ec934eedd9db48a7121c2.mp4
+  Demonstrações de squash/stretch, transformação, tipografia e componentes.
+  Aplicação: interpolação de formas, profundidade e entradas suaves.
+5af601a6a4d2f7a9c56f0037483293d8.mp4
+  Cartões flutuantes, texto escalonado, ilustrações e composição comercial.
+  Aplicação: colagem, movimento de cartões e revelação por partes.
+72333693958b7e2c0c195794f17b1cac.mp4
+  Sequência documental com elementos em planos e imagens de apoio.
+  Aplicação: camadas de imagem, recorte, preservação de documentos e gráficos.
+82c8ec9ca32385ce09a31f00c66c1cb7.mp4
+  Demonstração de interface, botões, foco e cursor com acento verde.
+  Aplicação: interface demonstrativa e movimento contínuo do cursor.
+995435479ed803eeaba5d97cf48335c1.mp4
+  Retrato destacado, objeto de apoio e número grande sobre fundo escuro.
+  Aplicação: primeiro plano e contador com números fornecidos pelo roteiro.
+a88a66051ad34430edb68d79e02a3a1b.mp4
+  Demonstração com áreas de vídeo e interface, alternância de enquadramento.
+  Aplicação: mídia dentro da interface, colagem e comparação.
+baeb741a13cdee79801123a20720b709.mp4
+  Cenas cinematográficas, palavras destacadas e sucessão de planos.
+  Aplicação: vídeo real em movimento, enquadramento e edição editorial.
+fe5d6dec56a58ae1aca98117c5b3ba20.mp4
+  Tipografia expressiva, trocas de escala, setas desenhadas e entradas rápidas.
+  Aplicação: tipografia editorial, linhas desenhadas e acentos de movimento.
+
+Os recursos foram reconstruídos como componentes reutilizáveis do editor.
+A prévia usa um trecho da oitava referência, conforme descrito no guia.
+Demais conteúdos das referências serviram para análise visual de estilo.
