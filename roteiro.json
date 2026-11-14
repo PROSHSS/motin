@@ -1,0 +1,145 @@
+{
+  "titulo": "Como Funciona o Segundo Turno",
+  "cenas": [
+    {
+      "narracao": "O Brasil precisa de um segundo turno para eleger seu presidente.",
+      "tipo": "imagem",
+      "destaque": "",
+      "elementos": [],
+      "prompt_imagem": "Wide angle shot of a large Brazilian city square at sunset, diverse anonymous citizens holding blank paper ballots in their hands looking toward a distant government building silhouette, warm golden hour lighting illuminating the crowd from behind creating long shadows, cinematic documentary style."
+    },
+    {
+      "narracao": "Se nenhum candidato tirar mais de 50% dos votos no primeiro turno, a eleição não é válida.",
+      "tipo": "documento",
+      "destaque": "50% + 1",
+      "elementos": [
+        {
+          "tipo": "icone",
+          "texto": "TSE regra eleitoral",
+          "icone": "Check",
+          "gatilho": "votos"
+        },
+        {
+          "tipo": "icone",
+          "texto": "mais de 50% dos votos",
+          "icone": "Check",
+          "gatilho": "votos"
+        },
+        {
+          "tipo": "icone",
+          "texto": "mais de 50% dos votos",
+          "icone": "Check",
+          "gatilho": "votos"
+        }
+      ],
+      "prompt_imagem": "Low angle shot of an empty Brazilian voting booth interior in deep shadows, a single anonymous hand reaching toward a blurred ballot box center-left, soft diffused window light creating high-key contrast on dust motes, vast calm negative space to the right for animated graphics overlay. }"
+    },
+    {
+      "narracao": "Apenas dois candidatos podem disputar a vaga final.",
+      "tipo": "versus",
+      "destaque": "Dois Candidatos",
+      "elementos": [
+        {
+          "tipo": "icone",
+          "texto": "Candidato A",
+          "icone": "Check",
+          "gatilho": "dois"
+        },
+        {
+          "tipo": "icone",
+          "texto": "Candidato B",
+          "icone": "Check",
+          "gatilho": "dois"
+        }
+      ],
+      "prompt_imagem": "Low-angle shot of two blurred silhouettes standing back-to-back against a dark, rainy Brazilian street at night, soft focus with low contrast lighting, creating empty atmospheric space for animated graphics overlay"
+    },
+    {
+      "narracao": "~A eleição só ocorre se a maioria absoluta for atingida.",
+      "tipo": "cinetica",
+      "destaque": "maioria absoluta",
+      "elementos": [
+        {
+          "tipo": "icone",
+          "texto": "Sem maioria",
+          "icone": "Check",
+          "gatilho": "atingida"
+        },
+        {
+          "tipo": "icone",
+          "texto": "Ocorre o segundo turno",
+          "icone": "Check",
+          "gatilho": "ocorre"
+        }
+      ],
+      "prompt_imagem": "Low angle shot of a dimly lit Brazilian city street at dusk with soft bokeh lights in the background, an anonymous silhouette of a voter standing alone in the distance looking ahead, calm empty negative space above for text overlay, low contrast atmosphere."
+    },
+    {
+      "narracao": "Os eleitores decidem quem será o chefe do executivo.",
+      "tipo": "silhuetas",
+      "destaque": "Eleitores",
+      "elementos": [
+        {
+          "tipo": "icone",
+          "texto": "Voz popular",
+          "icone": "Check",
+          "gatilho": "decidem"
+        }
+      ],
+      "prompt_imagem": "Low-angle shot of a small silhouette standing in a dimly lit Brazilian city square at dusk, soft focus on distant blurred buildings, calm empty space dominates the frame, low contrast lighting, atmospheric backdrop style."
+    },
+    {
+      "narracao": "Este processo garante a legitimidade da escolha presidencial.",
+      "tipo": "explicativa",
+      "destaque": "Legitimidade",
+      "elementos": [
+        {
+          "tipo": "icone",
+          "texto": "Escolha justa",
+          "icone": "Check",
+          "gatilho": "garante"
+        },
+        {
+          "tipo": "numero",
+          "texto": "100%",
+          "icone": "Check",
+          "gatilho": "legitimidade"
+        }
+      ],
+      "prompt_imagem": "Low-angle shot of a small, backlit silhouette of a diverse crowd standing in front of a dimly lit Brazilian government building at night; soft focus background with deep shadows and minimal contrast to serve as an atmospheric backdrop for animated text overlays."
+    },
+    {
+      "narracao": "A história da democracia brasileira depende desse mecanismo.",
+      "tipo": "linha_tempo",
+      "destaque": "História",
+      "elementos": [
+        {
+          "tipo": "icone",
+          "texto": "1989 - 1º turno",
+          "icone": "Check",
+          "gatilho": "depende"
+        },
+        {
+          "tipo": "icone",
+          "texto": "1994 - 2º turno",
+          "icone": "Check",
+          "gatilho": "mecanismo"
+        },
+        {
+          "tipo": "icone",
+          "texto": "2022 - Hoje",
+          "icone": "Check",
+          "gatilho": ""
+        }
+      ],
+      "prompt_imagem": "Low-angle atmospheric shot of a dimly lit Brazilian public square at dusk, featuring a small crowd of anonymous silhouettes seen only from behind standing near old colonial architecture, soft focus with low contrast, vast empty negative space above for text overlay, grainy documentary texture."
+    },
+    {
+      "narracao": "Entenda agora como a democracia funciona no segundo turno.",
+      "tipo": "imagem",
+      "destaque": "",
+      "elementos": [],
+      "prompt_imagem": "Low-angle shot of a diverse crowd of anonymous Brazilian voters standing in a sunlit public square holding transparent ballot boxes, symbolizing the second round election process with strong natural lighting and deep composition."
+    }
+  ]
+}

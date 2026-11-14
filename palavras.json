@@ -1,0 +1,407 @@
+[
+  {
+    "palavra": "O",
+    "inicio": 0.0,
+    "fim": 0.7
+  },
+  {
+    "palavra": "Brasil",
+    "inicio": 0.7,
+    "fim": 1.0
+  },
+  {
+    "palavra": "precisa",
+    "inicio": 1.0,
+    "fim": 1.54
+  },
+  {
+    "palavra": "de",
+    "inicio": 1.54,
+    "fim": 1.82
+  },
+  {
+    "palavra": "um",
+    "inicio": 1.82,
+    "fim": 1.92
+  },
+  {
+    "palavra": "segundo",
+    "inicio": 1.92,
+    "fim": 2.3
+  },
+  {
+    "palavra": "turno",
+    "inicio": 2.3,
+    "fim": 2.84
+  },
+  {
+    "palavra": "para",
+    "inicio": 2.84,
+    "fim": 3.02
+  },
+  {
+    "palavra": "eleger",
+    "inicio": 3.02,
+    "fim": 3.36
+  },
+  {
+    "palavra": "seu",
+    "inicio": 3.36,
+    "fim": 3.58
+  },
+  {
+    "palavra": "presidente.",
+    "inicio": 3.58,
+    "fim": 4.08
+  },
+  {
+    "palavra": "Se",
+    "inicio": 5.32,
+    "fim": 5.64
+  },
+  {
+    "palavra": "nenhum",
+    "inicio": 5.64,
+    "fim": 5.9
+  },
+  {
+    "palavra": "candidato",
+    "inicio": 5.9,
+    "fim": 6.54
+  },
+  {
+    "palavra": "tirar",
+    "inicio": 6.54,
+    "fim": 6.84
+  },
+  {
+    "palavra": "mais",
+    "inicio": 6.84,
+    "fim": 7.22
+  },
+  {
+    "palavra": "de",
+    "inicio": 7.22,
+    "fim": 7.38
+  },
+  {
+    "palavra": "50",
+    "inicio": 7.38,
+    "fim": 7.72
+  },
+  {
+    "palavra": "%",
+    "inicio": 7.72,
+    "fim": 8.24
+  },
+  {
+    "palavra": "dos",
+    "inicio": 8.24,
+    "fim": 8.6
+  },
+  {
+    "palavra": "votos",
+    "inicio": 8.6,
+    "fim": 9.0
+  },
+  {
+    "palavra": "no",
+    "inicio": 9.0,
+    "fim": 9.12
+  },
+  {
+    "palavra": "primeiro",
+    "inicio": 9.12,
+    "fim": 9.48
+  },
+  {
+    "palavra": "turno,",
+    "inicio": 9.48,
+    "fim": 10.08
+  },
+  {
+    "palavra": "a",
+    "inicio": 10.4,
+    "fim": 10.48
+  },
+  {
+    "palavra": "eleição",
+    "inicio": 10.48,
+    "fim": 10.86
+  },
+  {
+    "palavra": "não",
+    "inicio": 10.86,
+    "fim": 11.1
+  },
+  {
+    "palavra": "é",
+    "inicio": 11.1,
+    "fim": 11.28
+  },
+  {
+    "palavra": "válida.",
+    "inicio": 11.28,
+    "fim": 11.7
+  },
+  {
+    "palavra": "Apenas",
+    "inicio": 12.92,
+    "fim": 13.36
+  },
+  {
+    "palavra": "dois",
+    "inicio": 13.36,
+    "fim": 13.64
+  },
+  {
+    "palavra": "candidatos",
+    "inicio": 13.64,
+    "fim": 14.46
+  },
+  {
+    "palavra": "podem",
+    "inicio": 14.46,
+    "fim": 14.82
+  },
+  {
+    "palavra": "disputar",
+    "inicio": 14.82,
+    "fim": 15.4
+  },
+  {
+    "palavra": "a",
+    "inicio": 15.4,
+    "fim": 15.52
+  },
+  {
+    "palavra": "vaga",
+    "inicio": 15.52,
+    "fim": 15.74
+  },
+  {
+    "palavra": "final.",
+    "inicio": 15.74,
+    "fim": 16.04
+  },
+  {
+    "palavra": "A",
+    "inicio": 17.26,
+    "fim": 17.6
+  },
+  {
+    "palavra": "eleição",
+    "inicio": 17.6,
+    "fim": 17.98
+  },
+  {
+    "palavra": "só",
+    "inicio": 17.98,
+    "fim": 18.18
+  },
+  {
+    "palavra": "ocorre",
+    "inicio": 18.18,
+    "fim": 18.68
+  },
+  {
+    "palavra": "se",
+    "inicio": 18.68,
+    "fim": 18.88
+  },
+  {
+    "palavra": "a",
+    "inicio": 18.88,
+    "fim": 18.94
+  },
+  {
+    "palavra": "maioria",
+    "inicio": 18.94,
+    "fim": 19.2
+  },
+  {
+    "palavra": "absoluta",
+    "inicio": 19.2,
+    "fim": 19.94
+  },
+  {
+    "palavra": "for",
+    "inicio": 19.94,
+    "fim": 20.18
+  },
+  {
+    "palavra": "atingida.",
+    "inicio": 20.18,
+    "fim": 20.8
+  },
+  {
+    "palavra": "Os",
+    "inicio": 22.02,
+    "fim": 22.18
+  },
+  {
+    "palavra": "eleitores",
+    "inicio": 22.18,
+    "fim": 22.7
+  },
+  {
+    "palavra": "decidem",
+    "inicio": 22.7,
+    "fim": 23.34
+  },
+  {
+    "palavra": "quem",
+    "inicio": 23.34,
+    "fim": 23.54
+  },
+  {
+    "palavra": "será",
+    "inicio": 23.54,
+    "fim": 23.86
+  },
+  {
+    "palavra": "o",
+    "inicio": 23.86,
+    "fim": 24.08
+  },
+  {
+    "palavra": "chefe",
+    "inicio": 24.08,
+    "fim": 24.38
+  },
+  {
+    "palavra": "do",
+    "inicio": 24.38,
+    "fim": 24.52
+  },
+  {
+    "palavra": "executivo.",
+    "inicio": 24.52,
+    "fim": 25.18
+  },
+  {
+    "palavra": "Este",
+    "inicio": 26.07,
+    "fim": 26.6
+  },
+  {
+    "palavra": "processo",
+    "inicio": 26.6,
+    "fim": 27.18
+  },
+  {
+    "palavra": "garante",
+    "inicio": 27.18,
+    "fim": 27.8
+  },
+  {
+    "palavra": "a",
+    "inicio": 27.8,
+    "fim": 27.92
+  },
+  {
+    "palavra": "legitimidade",
+    "inicio": 27.92,
+    "fim": 28.7
+  },
+  {
+    "palavra": "da",
+    "inicio": 28.7,
+    "fim": 28.88
+  },
+  {
+    "palavra": "escolha",
+    "inicio": 28.88,
+    "fim": 29.26
+  },
+  {
+    "palavra": "presidencial.",
+    "inicio": 29.26,
+    "fim": 30.04
+  },
+  {
+    "palavra": "A",
+    "inicio": 31.2,
+    "fim": 31.42
+  },
+  {
+    "palavra": "história",
+    "inicio": 31.42,
+    "fim": 31.78
+  },
+  {
+    "palavra": "da",
+    "inicio": 31.78,
+    "fim": 32.0
+  },
+  {
+    "palavra": "democracia",
+    "inicio": 32.0,
+    "fim": 32.66
+  },
+  {
+    "palavra": "brasileira",
+    "inicio": 32.66,
+    "fim": 33.36
+  },
+  {
+    "palavra": "depende",
+    "inicio": 33.36,
+    "fim": 33.9
+  },
+  {
+    "palavra": "desse",
+    "inicio": 33.9,
+    "fim": 34.28
+  },
+  {
+    "palavra": "mecanismo.",
+    "inicio": 34.28,
+    "fim": 34.94
+  },
+  {
+    "palavra": "Entenda",
+    "inicio": 36.22,
+    "fim": 36.74
+  },
+  {
+    "palavra": "agora",
+    "inicio": 36.74,
+    "fim": 37.08
+  },
+  {
+    "palavra": "como",
+    "inicio": 37.08,
+    "fim": 37.46
+  },
+  {
+    "palavra": "a",
+    "inicio": 37.46,
+    "fim": 37.62
+  },
+  {
+    "palavra": "democracia",
+    "inicio": 37.62,
+    "fim": 38.22
+  },
+  {
+    "palavra": "funciona",
+    "inicio": 38.22,
+    "fim": 38.8
+  },
+  {
+    "palavra": "no",
+    "inicio": 38.8,
+    "fim": 39.06
+  },
+  {
+    "palavra": "segundo",
+    "inicio": 39.06,
+    "fim": 39.44
+  },
+  {
+    "palavra": "turno.",
+    "inicio": 39.44,
+    "fim": 39.96
+  }
+]

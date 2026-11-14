@@ -1,0 +1,21 @@
+PROJETO DE VIDEO (Remotion)
+
+Coloque esta pasta (doc-video) DENTRO de C:\Users\Pedro\doc-tiktok
+Assim: C:\Users\Pedro\doc-tiktok\doc-video
+
+1) Instalar (so uma vez), no Prompt de Comando:
+   cd C:\Users\Pedro\doc-tiktok\doc-video
+   npm install
+
+2) Copiar seus arquivos para o projeto:
+   copiar_arquivos.bat   (duplo clique)
+   Isso substitui os arquivos de EXEMPLO em public\ pelos seus.
+
+3) Ver no navegador (opcional):
+   npm run preview
+
+4) Gerar o MP4:
+   npm run render
+   Resultado: out\video.mp4
+
+Obs: a pasta public\ ja vem com um EXEMPLO (audio e dados de teste).
