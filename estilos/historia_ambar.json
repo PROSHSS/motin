@@ -1,0 +1,32 @@
+{
+  "descricao": "Escuro âmbar (história, fatos, linha do tempo)",
+  "paleta": [
+    "ambar",
+    "grafite"
+  ],
+  "gancho": [
+    "digitando",
+    "carimbo"
+  ],
+  "preferir": [
+    "linha_tempo",
+    "citacao",
+    "contador",
+    "ranking",
+    "alerta"
+  ],
+  "evitar": [
+    "processo",
+    "celular"
+  ],
+  "ritmo": 1.1,
+  "nome": "historia_ambar",
+  "classicas": [
+    "imagem",
+    "documento",
+    "silhuetas",
+    "cinetica",
+    "explicativa"
+  ],
+  "mistura": 0.5
+}

@@ -1,0 +1,32 @@
+{
+  "descricao": "Escuro grafite minimalista (marcas, negócios, análises)",
+  "paleta": [
+    "grafite",
+    "ambar",
+    "ciano"
+  ],
+  "gancho": [
+    "digitando",
+    "etiqueta"
+  ],
+  "preferir": [
+    "contador",
+    "grafico",
+    "ranking",
+    "comparacao",
+    "citacao"
+  ],
+  "evitar": [
+    "celular"
+  ],
+  "ritmo": 1.05,
+  "nome": "premium_grafite",
+  "classicas": [
+    "numero_gigante",
+    "painel",
+    "frase",
+    "cinetica",
+    "documento"
+  ],
+  "mistura": 0.3
+}

@@ -1,0 +1,31 @@
+{
+  "descricao": "Claro com vermelho (alertas, riscos, polêmicas)",
+  "paleta": [
+    "rubi",
+    "laranja"
+  ],
+  "gancho": [
+    "carimbo",
+    "etiqueta"
+  ],
+  "preferir": [
+    "alerta",
+    "comparacao",
+    "grafico",
+    "checklist",
+    "citacao"
+  ],
+  "evitar": [
+    "ranking"
+  ],
+  "ritmo": 0.95,
+  "nome": "alerta_rubi",
+  "classicas": [
+    "cinetica",
+    "documento",
+    "silhuetas",
+    "imagem",
+    "frase"
+  ],
+  "mistura": 0.4
+}

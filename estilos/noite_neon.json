@@ -1,0 +1,30 @@
+{
+  "descricao": "Escuro com verde neon (tecnologia, golpes digitais, segurança)",
+  "paleta": [
+    "neon",
+    "ciano"
+  ],
+  "gancho": [
+    "digitando",
+    "carimbo"
+  ],
+  "preferir": [
+    "celular",
+    "alerta",
+    "checklist",
+    "rajada",
+    "processo"
+  ],
+  "evitar": [
+    "ranking"
+  ],
+  "ritmo": 0.95,
+  "nome": "noite_neon",
+  "classicas": [
+    "cinetica",
+    "frase",
+    "explicativa",
+    "imagem"
+  ],
+  "mistura": 0.3
+}
