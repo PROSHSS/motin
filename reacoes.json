@@ -1,0 +1,889 @@
+{
+  "preset": "ALÉM DO ÓBVIO — PERSONAGEM NARRADOR",
+  "personagem": "Óbvio",
+  "slug": "alem_do_obvio",
+  "versao": "1.0",
+  "total": 66,
+  "formato": "PNG RGBA transparente",
+  "cores": {
+    "vermelho": "#E51B23",
+    "grafite": "#171717",
+    "branco": "#F5F3EF"
+  },
+  "layout_padrao": {
+    "video": [
+      1080,
+      1920
+    ],
+    "posicao": "inferior_esquerdo",
+    "altura_personagem_px": 330,
+    "margem_esquerda_px": 36,
+    "margem_inferior_px": 340,
+    "legenda_sem_fundo": true
+  },
+  "reacoes": [
+    {
+      "id": "A01_R01_C01",
+      "nome": "ideia_dedo",
+      "arquivo": "sprites/A01_R01_C01_ideia_dedo.png",
+      "emocao": [
+        "explicacao"
+      ],
+      "prancha": 1,
+      "linha": 1,
+      "coluna": 1,
+      "largura": 219,
+      "altura": 211
+    },
+    {
+      "id": "A01_R01_C02",
+      "nome": "feliz_comemorando",
+      "arquivo": "sprites/A01_R01_C02_feliz_comemorando.png",
+      "emocao": [
+        "alegria"
+      ],
+      "prancha": 1,
+      "linha": 1,
+      "coluna": 2,
+      "largura": 184,
+      "altura": 210
+    },
+    {
+      "id": "A01_R01_C03",
+      "nome": "apresentando",
+      "arquivo": "sprites/A01_R01_C03_apresentando.png",
+      "emocao": [
+        "explicacao"
+      ],
+      "prancha": 1,
+      "linha": 1,
+      "coluna": 3,
+      "largura": 229,
+      "altura": 207
+    },
+    {
+      "id": "A01_R01_C04",
+      "nome": "apontando_varinha",
+      "arquivo": "sprites/A01_R01_C04_apontando_varinha.png",
+      "emocao": [
+        "explicacao"
+      ],
+      "prancha": 1,
+      "linha": 1,
+      "coluna": 4,
+      "largura": 229,
+      "altura": 211
+    },
+    {
+      "id": "A01_R01_C05",
+      "nome": "ideia_piscando",
+      "arquivo": "sprites/A01_R01_C05_ideia_piscando.png",
+      "emocao": [
+        "explicacao"
+      ],
+      "prancha": 1,
+      "linha": 1,
+      "coluna": 5,
+      "largura": 224,
+      "altura": 220
+    },
+    {
+      "id": "A01_R01_C06",
+      "nome": "surpresa_estrelas",
+      "arquivo": "sprites/A01_R01_C06_surpresa_estrelas.png",
+      "emocao": [
+        "surpresa"
+      ],
+      "prancha": 1,
+      "linha": 1,
+      "coluna": 6,
+      "largura": 220,
+      "altura": 205
+    },
+    {
+      "id": "A01_R02_C01",
+      "nome": "assustado",
+      "arquivo": "sprites/A01_R02_C01_assustado.png",
+      "emocao": [
+        "surpresa"
+      ],
+      "prancha": 1,
+      "linha": 2,
+      "coluna": 1,
+      "largura": 217,
+      "altura": 214
+    },
+    {
+      "id": "A01_R02_C02",
+      "nome": "duvida_interrogacao",
+      "arquivo": "sprites/A01_R02_C02_duvida_interrogacao.png",
+      "emocao": [
+        "investigacao"
+      ],
+      "prancha": 1,
+      "linha": 2,
+      "coluna": 2,
+      "largura": 193,
+      "altura": 212
+    },
+    {
+      "id": "A01_R02_C03",
+      "nome": "desconfiado",
+      "arquivo": "sprites/A01_R02_C03_desconfiado.png",
+      "emocao": [
+        "neutralidade"
+      ],
+      "prancha": 1,
+      "linha": 2,
+      "coluna": 3,
+      "largura": 167,
+      "altura": 210
+    },
+    {
+      "id": "A01_R02_C04",
+      "nome": "bravo",
+      "arquivo": "sprites/A01_R02_C04_bravo.png",
+      "emocao": [
+        "indignacao"
+      ],
+      "prancha": 1,
+      "linha": 2,
+      "coluna": 4,
+      "largura": 209,
+      "altura": 205
+    },
+    {
+      "id": "A01_R02_C05",
+      "nome": "determinado",
+      "arquivo": "sprites/A01_R02_C05_determinado.png",
+      "emocao": [
+        "neutralidade"
+      ],
+      "prancha": 1,
+      "linha": 2,
+      "coluna": 5,
+      "largura": 221,
+      "altura": 212
+    },
+    {
+      "id": "A01_R02_C06",
+      "nome": "descolado_oculos",
+      "arquivo": "sprites/A01_R02_C06_descolado_oculos.png",
+      "emocao": [
+        "neutralidade"
+      ],
+      "prancha": 1,
+      "linha": 2,
+      "coluna": 6,
+      "largura": 218,
+      "altura": 210
+    },
+    {
+      "id": "A01_R03_C01",
+      "nome": "pensando",
+      "arquivo": "sprites/A01_R03_C01_pensando.png",
+      "emocao": [
+        "investigacao"
+      ],
+      "prancha": 1,
+      "linha": 3,
+      "coluna": 1,
+      "largura": 240,
+      "altura": 202
+    },
+    {
+      "id": "A01_R03_C02",
+      "nome": "preocupado_suor",
+      "arquivo": "sprites/A01_R03_C02_preocupado_suor.png",
+      "emocao": [
+        "tristeza"
+      ],
+      "prancha": 1,
+      "linha": 3,
+      "coluna": 2,
+      "largura": 197,
+      "altura": 197
+    },
+    {
+      "id": "A01_R03_C03",
+      "nome": "triste",
+      "arquivo": "sprites/A01_R03_C03_triste.png",
+      "emocao": [
+        "tristeza"
+      ],
+      "prancha": 1,
+      "linha": 3,
+      "coluna": 3,
+      "largura": 179,
+      "altura": 196
+    },
+    {
+      "id": "A01_R03_C04",
+      "nome": "chorando_muito",
+      "arquivo": "sprites/A01_R03_C04_chorando_muito.png",
+      "emocao": [
+        "tristeza"
+      ],
+      "prancha": 1,
+      "linha": 3,
+      "coluna": 4,
+      "largura": 242,
+      "altura": 196
+    },
+    {
+      "id": "A01_R03_C05",
+      "nome": "suspiro",
+      "arquivo": "sprites/A01_R03_C05_suspiro.png",
+      "emocao": [
+        "humor"
+      ],
+      "prancha": 1,
+      "linha": 3,
+      "coluna": 5,
+      "largura": 225,
+      "altura": 200
+    },
+    {
+      "id": "A01_R03_C06",
+      "nome": "sono_bocejando",
+      "arquivo": "sprites/A01_R03_C06_sono_bocejando.png",
+      "emocao": [
+        "neutralidade"
+      ],
+      "prancha": 1,
+      "linha": 3,
+      "coluna": 6,
+      "largura": 235,
+      "altura": 204
+    },
+    {
+      "id": "A01_R04_C01",
+      "nome": "apaixonado",
+      "arquivo": "sprites/A01_R04_C01_apaixonado.png",
+      "emocao": [
+        "afeto"
+      ],
+      "prancha": 1,
+      "linha": 4,
+      "coluna": 1,
+      "largura": 208,
+      "altura": 184
+    },
+    {
+      "id": "A01_R04_C02",
+      "nome": "abracando_coracao",
+      "arquivo": "sprites/A01_R04_C02_abracando_coracao.png",
+      "emocao": [
+        "afeto"
+      ],
+      "prancha": 1,
+      "linha": 4,
+      "coluna": 2,
+      "largura": 210,
+      "altura": 186
+    },
+    {
+      "id": "A01_R04_C03",
+      "nome": "ganho_dinheiro",
+      "arquivo": "sprites/A01_R04_C03_ganho_dinheiro.png",
+      "emocao": [
+        "alegria"
+      ],
+      "prancha": 1,
+      "linha": 4,
+      "coluna": 3,
+      "largura": 211,
+      "altura": 189
+    },
+    {
+      "id": "A01_R04_C04",
+      "nome": "apavorado",
+      "arquivo": "sprites/A01_R04_C04_apavorado.png",
+      "emocao": [
+        "surpresa"
+      ],
+      "prancha": 1,
+      "linha": 4,
+      "coluna": 4,
+      "largura": 198,
+      "altura": 182
+    },
+    {
+      "id": "A01_R04_C05",
+      "nome": "frustrado_facepalm",
+      "arquivo": "sprites/A01_R04_C05_frustrado_facepalm.png",
+      "emocao": [
+        "humor"
+      ],
+      "prancha": 1,
+      "linha": 4,
+      "coluna": 5,
+      "largura": 195,
+      "altura": 180
+    },
+    {
+      "id": "A01_R04_C06",
+      "nome": "pare_recusando",
+      "arquivo": "sprites/A01_R04_C06_pare_recusando.png",
+      "emocao": [
+        "indignacao"
+      ],
+      "prancha": 1,
+      "linha": 4,
+      "coluna": 6,
+      "largura": 253,
+      "altura": 182
+    },
+    {
+      "id": "A01_R05_C01",
+      "nome": "lendo_livro",
+      "arquivo": "sprites/A01_R05_C01_lendo_livro.png",
+      "emocao": [
+        "neutralidade"
+      ],
+      "prancha": 1,
+      "linha": 5,
+      "coluna": 1,
+      "largura": 182,
+      "altura": 176
+    },
+    {
+      "id": "A01_R05_C02",
+      "nome": "investigando_lupa",
+      "arquivo": "sprites/A01_R05_C02_investigando_lupa.png",
+      "emocao": [
+        "investigacao"
+      ],
+      "prancha": 1,
+      "linha": 5,
+      "coluna": 2,
+      "largura": 196,
+      "altura": 176
+    },
+    {
+      "id": "A01_R05_C03",
+      "nome": "pipoca",
+      "arquivo": "sprites/A01_R05_C03_pipoca.png",
+      "emocao": [
+        "humor"
+      ],
+      "prancha": 1,
+      "linha": 5,
+      "coluna": 3,
+      "largura": 170,
+      "altura": 176
+    },
+    {
+      "id": "A01_R05_C04",
+      "nome": "observando_binoculos",
+      "arquivo": "sprites/A01_R05_C04_observando_binoculos.png",
+      "emocao": [
+        "investigacao"
+      ],
+      "prancha": 1,
+      "linha": 5,
+      "coluna": 4,
+      "largura": 195,
+      "altura": 176
+    },
+    {
+      "id": "A01_R05_C05",
+      "nome": "aprovando_joinha",
+      "arquivo": "sprites/A01_R05_C05_aprovando_joinha.png",
+      "emocao": [
+        "alegria"
+      ],
+      "prancha": 1,
+      "linha": 5,
+      "coluna": 5,
+      "largura": 187,
+      "altura": 174
+    },
+    {
+      "id": "A01_R05_C06",
+      "nome": "gravando_video",
+      "arquivo": "sprites/A01_R05_C06_gravando_video.png",
+      "emocao": [
+        "neutralidade"
+      ],
+      "prancha": 1,
+      "linha": 5,
+      "coluna": 6,
+      "largura": 208,
+      "altura": 176
+    },
+    {
+      "id": "A01_R05_C07",
+      "nome": "anunciando_megafone",
+      "arquivo": "sprites/A01_R05_C07_anunciando_megafone.png",
+      "emocao": [
+        "explicacao"
+      ],
+      "prancha": 1,
+      "linha": 5,
+      "coluna": 7,
+      "largura": 225,
+      "altura": 176
+    },
+    {
+      "id": "A02_R01_C01",
+      "nome": "explicando",
+      "arquivo": "sprites/A02_R01_C01_explicando.png",
+      "emocao": [
+        "explicacao"
+      ],
+      "prancha": 2,
+      "linha": 1,
+      "coluna": 1,
+      "largura": 212,
+      "altura": 183
+    },
+    {
+      "id": "A02_R01_C02",
+      "nome": "feliz_rindo",
+      "arquivo": "sprites/A02_R01_C02_feliz_rindo.png",
+      "emocao": [
+        "alegria",
+        "humor"
+      ],
+      "prancha": 2,
+      "linha": 1,
+      "coluna": 2,
+      "largura": 177,
+      "altura": 188
+    },
+    {
+      "id": "A02_R01_C03",
+      "nome": "aprovando",
+      "arquivo": "sprites/A02_R01_C03_aprovando.png",
+      "emocao": [
+        "alegria"
+      ],
+      "prancha": 2,
+      "linha": 1,
+      "coluna": 3,
+      "largura": 188,
+      "altura": 183
+    },
+    {
+      "id": "A02_R01_C04",
+      "nome": "nova_ideia",
+      "arquivo": "sprites/A02_R01_C04_nova_ideia.png",
+      "emocao": [
+        "explicacao"
+      ],
+      "prancha": 2,
+      "linha": 1,
+      "coluna": 4,
+      "largura": 209,
+      "altura": 194
+    },
+    {
+      "id": "A02_R01_C05",
+      "nome": "comemorando",
+      "arquivo": "sprites/A02_R01_C05_comemorando.png",
+      "emocao": [
+        "alegria"
+      ],
+      "prancha": 2,
+      "linha": 1,
+      "coluna": 5,
+      "largura": 209,
+      "altura": 187
+    },
+    {
+      "id": "A02_R01_C06",
+      "nome": "apaixonado_coracoes",
+      "arquivo": "sprites/A02_R01_C06_apaixonado_coracoes.png",
+      "emocao": [
+        "afeto"
+      ],
+      "prancha": 2,
+      "linha": 1,
+      "coluna": 6,
+      "largura": 184,
+      "altura": 184
+    },
+    {
+      "id": "A02_R01_C07",
+      "nome": "estiloso",
+      "arquivo": "sprites/A02_R01_C07_estiloso.png",
+      "emocao": [
+        "alegria"
+      ],
+      "prancha": 2,
+      "linha": 1,
+      "coluna": 7,
+      "largura": 184,
+      "altura": 183
+    },
+    {
+      "id": "A02_R02_C01",
+      "nome": "chocado",
+      "arquivo": "sprites/A02_R02_C01_chocado.png",
+      "emocao": [
+        "surpresa"
+      ],
+      "prancha": 2,
+      "linha": 2,
+      "coluna": 1,
+      "largura": 206,
+      "altura": 210
+    },
+    {
+      "id": "A02_R02_C02",
+      "nome": "espantado",
+      "arquivo": "sprites/A02_R02_C02_espantado.png",
+      "emocao": [
+        "surpresa"
+      ],
+      "prancha": 2,
+      "linha": 2,
+      "coluna": 2,
+      "largura": 199,
+      "altura": 201
+    },
+    {
+      "id": "A02_R02_C03",
+      "nome": "acusando",
+      "arquivo": "sprites/A02_R02_C03_acusando.png",
+      "emocao": [
+        "indignacao"
+      ],
+      "prancha": 2,
+      "linha": 2,
+      "coluna": 3,
+      "largura": 160,
+      "altura": 195
+    },
+    {
+      "id": "A02_R02_C04",
+      "nome": "megafone_bravura",
+      "arquivo": "sprites/A02_R02_C04_megafone_bravura.png",
+      "emocao": [
+        "explicacao",
+        "indignacao"
+      ],
+      "prancha": 2,
+      "linha": 2,
+      "coluna": 4,
+      "largura": 247,
+      "altura": 191
+    },
+    {
+      "id": "A02_R02_C05",
+      "nome": "furioso",
+      "arquivo": "sprites/A02_R02_C05_furioso.png",
+      "emocao": [
+        "indignacao"
+      ],
+      "prancha": 2,
+      "linha": 2,
+      "coluna": 5,
+      "largura": 191,
+      "altura": 198
+    },
+    {
+      "id": "A02_R02_C06",
+      "nome": "entediado",
+      "arquivo": "sprites/A02_R02_C06_entediado.png",
+      "emocao": [
+        "neutralidade"
+      ],
+      "prancha": 2,
+      "linha": 2,
+      "coluna": 6,
+      "largura": 162,
+      "altura": 195
+    },
+    {
+      "id": "A02_R02_C07",
+      "nome": "sem_resposta",
+      "arquivo": "sprites/A02_R02_C07_sem_resposta.png",
+      "emocao": [
+        "humor"
+      ],
+      "prancha": 2,
+      "linha": 2,
+      "coluna": 7,
+      "largura": 229,
+      "altura": 194
+    },
+    {
+      "id": "A02_R03_C01",
+      "nome": "duvida",
+      "arquivo": "sprites/A02_R03_C01_duvida.png",
+      "emocao": [
+        "investigacao"
+      ],
+      "prancha": 2,
+      "linha": 3,
+      "coluna": 1,
+      "largura": 205,
+      "altura": 204
+    },
+    {
+      "id": "A02_R03_C02",
+      "nome": "refletindo",
+      "arquivo": "sprites/A02_R03_C02_refletindo.png",
+      "emocao": [
+        "investigacao"
+      ],
+      "prancha": 2,
+      "linha": 3,
+      "coluna": 2,
+      "largura": 165,
+      "altura": 202
+    },
+    {
+      "id": "A02_R03_C03",
+      "nome": "investigando_lupa",
+      "arquivo": "sprites/A02_R03_C03_investigando_lupa.png",
+      "emocao": [
+        "investigacao"
+      ],
+      "prancha": 2,
+      "linha": 3,
+      "coluna": 3,
+      "largura": 188,
+      "altura": 202
+    },
+    {
+      "id": "A02_R03_C04",
+      "nome": "estudando",
+      "arquivo": "sprites/A02_R03_C04_estudando.png",
+      "emocao": [
+        "neutralidade"
+      ],
+      "prancha": 2,
+      "linha": 3,
+      "coluna": 4,
+      "largura": 189,
+      "altura": 206
+    },
+    {
+      "id": "A02_R03_C05",
+      "nome": "trabalhando_notebook",
+      "arquivo": "sprites/A02_R03_C05_trabalhando_notebook.png",
+      "emocao": [
+        "neutralidade"
+      ],
+      "prancha": 2,
+      "linha": 3,
+      "coluna": 5,
+      "largura": 222,
+      "altura": 198
+    },
+    {
+      "id": "A02_R03_C06",
+      "nome": "vergonha",
+      "arquivo": "sprites/A02_R03_C06_vergonha.png",
+      "emocao": [
+        "humor"
+      ],
+      "prancha": 2,
+      "linha": 3,
+      "coluna": 6,
+      "largura": 180,
+      "altura": 196
+    },
+    {
+      "id": "A02_R03_C07",
+      "nome": "rindo_nervoso",
+      "arquivo": "sprites/A02_R03_C07_rindo_nervoso.png",
+      "emocao": [
+        "alegria",
+        "humor"
+      ],
+      "prancha": 2,
+      "linha": 3,
+      "coluna": 7,
+      "largura": 195,
+      "altura": 202
+    },
+    {
+      "id": "A02_R04_C01",
+      "nome": "chorando",
+      "arquivo": "sprites/A02_R04_C01_chorando.png",
+      "emocao": [
+        "tristeza"
+      ],
+      "prancha": 2,
+      "linha": 4,
+      "coluna": 1,
+      "largura": 161,
+      "altura": 199
+    },
+    {
+      "id": "A02_R04_C02",
+      "nome": "desanimado",
+      "arquivo": "sprites/A02_R04_C02_desanimado.png",
+      "emocao": [
+        "tristeza"
+      ],
+      "prancha": 2,
+      "linha": 4,
+      "coluna": 2,
+      "largura": 171,
+      "altura": 199
+    },
+    {
+      "id": "A02_R04_C03",
+      "nome": "bocejando",
+      "arquivo": "sprites/A02_R04_C03_bocejando.png",
+      "emocao": [
+        "neutralidade"
+      ],
+      "prancha": 2,
+      "linha": 4,
+      "coluna": 3,
+      "largura": 210,
+      "altura": 203
+    },
+    {
+      "id": "A02_R04_C04",
+      "nome": "ouvindo_musica",
+      "arquivo": "sprites/A02_R04_C04_ouvindo_musica.png",
+      "emocao": [
+        "neutralidade"
+      ],
+      "prancha": 2,
+      "linha": 4,
+      "coluna": 4,
+      "largura": 201,
+      "altura": 198
+    },
+    {
+      "id": "A02_R04_C05",
+      "nome": "festejando",
+      "arquivo": "sprites/A02_R04_C05_festejando.png",
+      "emocao": [
+        "alegria"
+      ],
+      "prancha": 2,
+      "linha": 4,
+      "coluna": 5,
+      "largura": 226,
+      "altura": 195
+    },
+    {
+      "id": "A02_R04_C06",
+      "nome": "olhando_binoculos",
+      "arquivo": "sprites/A02_R04_C06_olhando_binoculos.png",
+      "emocao": [
+        "investigacao"
+      ],
+      "prancha": 2,
+      "linha": 4,
+      "coluna": 6,
+      "largura": 195,
+      "altura": 190
+    },
+    {
+      "id": "A02_R04_C07",
+      "nome": "negando",
+      "arquivo": "sprites/A02_R04_C07_negando.png",
+      "emocao": [
+        "indignacao"
+      ],
+      "prancha": 2,
+      "linha": 4,
+      "coluna": 7,
+      "largura": 204,
+      "altura": 198
+    },
+    {
+      "id": "A02_R05_C01",
+      "nome": "explicando_grafico",
+      "arquivo": "sprites/A02_R05_C01_explicando_grafico.png",
+      "emocao": [
+        "explicacao"
+      ],
+      "prancha": 2,
+      "linha": 5,
+      "coluna": 1,
+      "largura": 242,
+      "altura": 173
+    },
+    {
+      "id": "A02_R05_C02",
+      "nome": "pensando_novamente",
+      "arquivo": "sprites/A02_R05_C02_pensando_novamente.png",
+      "emocao": [
+        "investigacao"
+      ],
+      "prancha": 2,
+      "linha": 5,
+      "coluna": 2,
+      "largura": 189,
+      "altura": 177
+    },
+    {
+      "id": "A02_R05_C03",
+      "nome": "ideia_engrenagens",
+      "arquivo": "sprites/A02_R05_C03_ideia_engrenagens.png",
+      "emocao": [
+        "investigacao",
+        "explicacao"
+      ],
+      "prancha": 2,
+      "linha": 5,
+      "coluna": 3,
+      "largura": 214,
+      "altura": 182
+    },
+    {
+      "id": "A02_R05_C04",
+      "nome": "confiante",
+      "arquivo": "sprites/A02_R05_C04_confiante.png",
+      "emocao": [
+        "alegria"
+      ],
+      "prancha": 2,
+      "linha": 5,
+      "coluna": 4,
+      "largura": 178,
+      "altura": 182
+    },
+    {
+      "id": "A02_R05_C05",
+      "nome": "surpresa",
+      "arquivo": "sprites/A02_R05_C05_surpresa.png",
+      "emocao": [
+        "surpresa"
+      ],
+      "prancha": 2,
+      "linha": 5,
+      "coluna": 5,
+      "largura": 172,
+      "altura": 170
+    },
+    {
+      "id": "A02_R05_C06",
+      "nome": "rindo_facepalm",
+      "arquivo": "sprites/A02_R05_C06_rindo_facepalm.png",
+      "emocao": [
+        "alegria",
+        "humor"
+      ],
+      "prancha": 2,
+      "linha": 5,
+      "coluna": 6,
+      "largura": 188,
+      "altura": 173
+    },
+    {
+      "id": "A02_R05_C07",
+      "nome": "mostrando",
+      "arquivo": "sprites/A02_R05_C07_mostrando.png",
+      "emocao": [
+        "explicacao"
+      ],
+      "prancha": 2,
+      "linha": 5,
+      "coluna": 7,
+      "largura": 215,
+      "altura": 171
+    }
+  ]
+}

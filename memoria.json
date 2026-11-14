@@ -1,0 +1,148 @@
+[
+ {
+  "titulo": "Black Friday 2026: a verdade sobre os descontos",
+  "estilo": "varejo_ouro",
+  "paleta": "ouro",
+  "tipos": [
+   "foto_hero",
+   "foto_recorte",
+   "fato_real",
+   "lupa",
+   "foto_card3d",
+   "foto_persianas",
+   "fato_documento",
+   "foto_celular",
+   "foto_persianas",
+   "fecho"
+  ],
+  "gancho": "",
+  "quando": "2026-11-04 10:24"
+ },
+ {
+  "titulo": "Descubra como criar sua primeira live no TikTok",
+  "estilo": "saude_menta",
+  "paleta": "menta",
+  "tipos": [
+   "foto_hero",
+   "celular",
+   "checklist",
+   "foto_celular",
+   "foto_recorte",
+   "foto_polaroid",
+   "foto_persianas",
+   "linha_tempo",
+   "fecho"
+  ],
+  "gancho": "",
+  "quando": "2026-11-09 17:05"
+ },
+ {
+  "titulo": "O Instagram sabe sua idade real?",
+  "estilo": "historia_ambar",
+  "paleta": "grafite",
+  "tipos": [
+   "gancho",
+   "foto_card3d",
+   "glitch",
+   "foto_hero",
+   "cartaz",
+   "foto_persianas",
+   "foto_lupa",
+   "c_documento",
+   "fecho"
+  ],
+  "gancho": "etiqueta",
+  "quando": "2026-11-09 21:36"
+ },
+ {
+  "titulo": "Estrela Morta Revela Futuro do Sol",
+  "estilo": "financas_azul",
+  "paleta": "menta",
+  "tipos": [
+   "foto_recorte",
+   "foto_card3d",
+   "foto_hero",
+   "fato_documento",
+   "foto_polaroid",
+   "alerta",
+   "fato_real",
+   "foto_celular",
+   "foto_lupa",
+   "fecho"
+  ],
+  "gancho": "",
+  "quando": "2026-11-11 09:50"
+ },
+ {
+  "titulo": "O que cai no Enem e como se proteger em 2026",
+  "estilo": "premium_grafite",
+  "paleta": "ambar",
+  "tipos": [
+   "foto_lupa",
+   "pilula",
+   "foto_celular",
+   "fato_documento",
+   "foto_card3d",
+   "checklist",
+   "foto_moldura",
+   "fato_real",
+   "fecho"
+  ],
+  "gancho": "",
+  "quando": "2026-11-11 12:34"
+ },
+ {
+  "titulo": "Governo derruba 348 perfis de bets ilegais",
+  "estilo": "historia_ambar",
+  "paleta": "grafite",
+  "tipos": [
+   "foto_recorte",
+   "foto_hero",
+   "foto_card3d",
+   "fato_real",
+   "citacao",
+   "foto_lupa",
+   "foto_celular",
+   "fato_documento",
+   "fecho"
+  ],
+  "gancho": "",
+  "quando": "2026-11-11 13:46"
+ },
+ {
+  "titulo": "Apagão em 2026: mito ou verdade?",
+  "estilo": "saude_menta",
+  "paleta": "menta",
+  "tipos": [
+   "foto_hero",
+   "foto_persianas",
+   "rajada",
+   "fato_real",
+   "fato_documento",
+   "foto_persianas",
+   "foto_celular",
+   "c_documento",
+   "fecho"
+  ],
+  "gancho": "",
+  "quando": "2026-11-12 23:30"
+ },
+ {
+  "titulo": "Seu cérebro tem falhas misteriosas",
+  "estilo": "financas_azul",
+  "paleta": "oceano",
+  "tipos": [
+   "foto_recorte",
+   "foto_lupa",
+   "comparacao",
+   "foto_persianas",
+   "foto_hero",
+   "linha_tempo",
+   "foto_moldura",
+   "foto_polaroid",
+   "fecho"
+  ],
+  "gancho": "",
+  "quando": "2026-11-13 12:05"
+ }
+]

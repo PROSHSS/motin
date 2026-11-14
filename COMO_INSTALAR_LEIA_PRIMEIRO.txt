@@ -1,0 +1,53 @@
+MOTION PRO 2.0 - PACOTE PARA SEU PC (SEM ALTERAR O GITHUB)
+============================================================
+
+O QUE ESTE ZIP CONTEM
+- A pasta editor/ com 2 arquivos novos de motion.
+- INSTALAR_NO_PC.bat: aplica as melhorias no editor que ja esta no seu PC.
+- RESTAURAR_BACKUP.bat: desfaz a atualizacao usando a copia de seguranca.
+- TESTAR_MOTION_PRO.bat: testa Python e, se instalado, TypeScript.
+- instalar.py: instalador reversivel, com validacao antes de modificar arquivos.
+
+PASSO A PASSO
+1. ESPERE seus videos atuais terminarem. Feche o painel, a janela preta
+   do painel e qualquer render em andamento.
+2. Extraia este ZIP em uma pasta separada. NAO apague a pasta do seu editor.
+3. Execute INSTALAR_NO_PC.bat com um duplo clique.
+4. Se aparecer uma janela para selecionar a pasta, escolha a pasta do editor
+   onde estao painel.py, motion_editor.py e criar.py. Se estiver dentro de
+   outra pasta, escolha editor/ e nao a pasta de projetos.
+5. O instalador confere tudo antes, copia os originais para uma pasta
+   _BACKUP_MOTION_PRO_... dentro do editor e so entao substitui o codigo.
+6. Execute TESTAR_MOTION_PRO.bat. Para testar o funcionamento completo,
+   abra o painel.bat que voce ja usa e gere UM video de teste.
+7. O painel tera as opcoes Movimento do Motion e Variedade de composicao.
+
+IMPORTANTE
+- Este ZIP E UMA ATUALIZACAO PARA O EDITOR QUE JA ESTA INSTALADO,
+  NAO UM EDITOR INDEPENDENTE QUE FUNCIONA SEM DEPENDENCIAS.
+- Nao copie a pasta 'editor' deste ZIP isoladamente para tentar executar:
+  use INSTALAR_NO_PC.bat para atualizar os arquivos que ja existem.
+- O instalador nao altera, nao apaga e nao exporta config.json, voces,
+  modelos de IA, ambientes Python, musicas, projetos nem videos.
+- O instalador nao instala Python, Node, Ollama, FFmpeg nem modelos.
+- Nenhum arquivo e enviado, apagado ou modificado no GitHub.
+- Se houver uma versao diferente e alguma alteracao nao for reconhecida,
+  a instalacao e interrompida sem trocar arquivos.
+- Nao e garantia de que o editor inteiro esteja sem bugs: a voz, seus
+  modelos locais e o Windows ainda precisam ser testados no seu computador.
+
+VOLTAR PARA A VERSAO ANTERIOR
+Feche o painel e execute RESTAURAR_BACKUP.bat. Escolha a mesma pasta.
+O restaurador usa o backup salvo automaticamente antes da instalacao.
+
+RECURSOS DESTA ETAPA
+- Selecao de cenas por intencao da fala (revelacao, pergunta, contraste,
+  tutorial, processo e outras).
+- Tipografia cinetica, cena dividida e composicao com camadas 2.5D.
+- Historico visual inclui foco, densidade, movimento e transicoes.
+- Controles de intensidade de movimento e variedade no painel.
+- Associacao de clipes por nome/descricao, com comportamento antigo quando
+  nao existem etiquetas. Nao interpreta automaticamente o conteudo visual.
+- Usa as bibliotecas e personagens que voce ja possui no editor.
+
+VERSAO: 2026-11-12 / Motion Pro 2.0 - instalacao offline.
