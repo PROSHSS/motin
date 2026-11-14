@@ -1,0 +1,41 @@
+FOTOS REAIS SEM PROBLEMA DE DIREITO AUTORAL (documentario)
+
+REGRA DE OURO: foto achada no Google, em site de noticia, no Instagram ou no TikTok de outras pessoas
+NAO pode ser usada so por citar a fonte. Ter "credito" nao substitui permissao.
+
+AUTOMATICO: voce nao precisa colocar foto nenhuma. O programa procura sozinho, na ordem: foto principal da
+Wikipedia da pessoa/lugar > Wikimedia Commons > Openverse, so com licenca livre. Se nao achar nada seguro,
+a cena vira outra cena (ou imagem ilustrativa de IA, marcada na tela). A pasta fotos\ e so para quando VOCE quiser
+escolher uma foto especifica.
+
+O QUE PODE USAR (e o programa ja faz o 1 e o 2 sozinho):
+1) Wikimedia Commons - o programa busca sozinho e so aceita fotos CC0, dominio publico ou CC BY
+   (nunca NC/ND). O autor aparece na tela e em legenda_post.txt (e isso que a licenca CC BY exige).
+2) Sua pasta de fotos - projetos\<tema>\fotos\
+   - Fotos suas, fotos de quem te AUTORIZOU por escrito (mensagem salva), ou de dominio publico.
+   - Nome do arquivo = cena:  cena3.jpg vai na cena 3 (se a cena nao for de foto, ela vira). Qualquer outro
+     nome vai para as cenas de foto, em ordem.
+   - Crie creditos.txt na mesma pasta, uma linha por foto:   cena3.jpg | Maria Souza | CC BY 4.0 | link
+     Se a foto e sua:   cena3.jpg | proprio
+3) Fontes publicas que costumam liberar com credito (CONFIRA a licenca na pagina e baixe voce mesmo
+   para a pasta fotos): Agencia Brasil (EBC), Agencia Camara, Agencia Senado, gov.br (veja a nota de
+   licenca de cada pagina), NASA, Unsplash/Pexels/Pixabay (licenca propria, uso comercial permitido).
+4) Casos reais: para pessoas, peca AUTORIZACAO de uso de imagem (mensagem ou termo simples). Para
+   documentos, prints e noticias, nao mostre o material inteiro: mostre o dado e cite a fonte (o
+   programa faz isso com a etiqueta FONTE na tela).
+
+O QUE EVITAR: Getty, Reuters, AP, AFP, Globo, capas de revista, fotos de menores de idade, fotos
+de pessoas comuns identificaveis sem autorizacao, logos de marcas como se fossem parceria.
+
+IMAGENS DE IA: ficam marcadas na tela como "Imagem ilustrativa (gerada por IA)" para ninguem achar
+que e uma foto do fato real (config.json: "rotular_ia": true). Em tema serio, prefira foto real
+ou deixe sem foto.
+
+CONFERENCIA: depois de cada video abra projetos\<tema>\creditos_fotos.txt (titulo, autor, licenca e link de
+cada foto real). Em tema serio o programa tambem pergunta S/N se as fotos combinam com o assunto.
+
+CONFIG (config.json):  "fotos_reais": "auto" (padrao) | "so_reais" (nunca usa IA) | "nunca"
+                       "permitir_cc_by_sa": false (mantenha false)
+Terminal:  python criar.py "tema" --sem-fotos-reais
+
+AVISO: isto e boa pratica, nao aconselhamento juridico. Em caso de duvida sobre uma foto, nao use.
