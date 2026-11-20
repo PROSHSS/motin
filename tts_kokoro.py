@@ -1,11 +1,13 @@
 import json, re, random
 import numpy as np
 import soundfile as sf
+import librosa
 from kokoro import KPipeline
 
 # ---------------- CONFIGURAÇÃO ----------------
-VOZ = "pm_alex"          # teste também: "pm_alex"
-VELOCIDADE = 0.92         # 0.88 a 0.95 = ritmo de documentário
+VOZ = "pm_alex"          # mantém a mesma voz original
+VELOCIDADE = 0.92         # preserva o ritmo original
+AGUDIZACAO_SEMITONS = 2.0  # voz mais aguda, preservando a duração da fala
 SR = 24000                # taxa de amostragem do Kokoro
 SEMENTE = 7               # fixa as pausas aleatórias (resultado repetível)
 # ----------------------------------------------
@@ -58,7 +60,13 @@ def falar(frase):
     partes = []
     for _, _, audio in pipe(frase, voice=VOZ, speed=VELOCIDADE):
         partes.append(np.asarray(audio, dtype=np.float32))
-    return np.concatenate(partes) if partes else silencio(0)
+    audio = np.concatenate(partes) if partes else silencio(0)
+    if audio.size and AGUDIZACAO_SEMITONS:
+        # Altera somente a altura (pitch) sem acelerar a narração.
+        audio = librosa.effects.pitch_shift(
+            audio, sr=SR, n_steps=AGUDIZACAO_SEMITONS
+        ).astype(np.float32)
+    return audio
 
 
 def fade(audio, ms=12):

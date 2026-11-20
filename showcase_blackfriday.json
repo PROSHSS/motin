@@ -1,0 +1,30 @@
+{
+  "titulo": "Black Friday: o desconto é real?",
+  "fps": 30,
+  "acento": "#c9a24a",
+  "modo": "claro",
+  "marca": "@seuperfil",
+  "cenas": [
+    {"tipo":"gancho","duracao":2.2,"fantasma":"FALSO","etiqueta":{"texto":"-70%","sub":"SÓ HOJE"},
+     "manchete":[[{"t":"BLACK FRIDAY","e":"forte"}],[{"t":"é ","e":"fina"},{"t":"engano","e":"serifa"},{"t":"?","e":"fina"}]]},
+    {"tipo":"celular","duracao":2.2,"fantasma":"TELA",
+     "notificacoes":[{"icone":"Tag","titulo":"OFERTA RELÂMPAGO","texto":"Últimas 3 unidades!"},{"icone":"Clock","titulo":"ACABA EM 10 MIN","texto":"Corra antes que acabe"},{"icone":"Flame","titulo":"-70% HOJE","texto":"Só para você"},{"icone":"Bell","titulo":"VOLTOU!","texto":"Mais barato da história"}],
+     "manchete":[[{"t":"a ","e":"fina"},{"t":"pressa","e":"serifa"},{"t":" é a isca","e":"fina"}]]},
+    {"tipo":"lupa","duracao":2.2,"fantasma":"PREÇO","lupa":{"preco":"R$ 1.299","rotulo":"PREÇO ANTES"},
+     "manchete":[[{"t":"olhe o ","e":"fina"},{"t":"preço","e":"serifa"}],[{"t":"ANTES","e":"forte"}]]},
+    {"tipo":"processo","duracao":3.9,
+     "processo":{"rotulo":"Preço do produto","campo":"R$ 999","de":"R$ 1.299","para":"R$ 909","badge":"30% OFF","final":"o desconto que nunca existiu","botao":"Aplicar"},
+     "manchete":[[{"t":"o truque em ","e":"fina"},{"t":"segundos","e":"serifa"}]]},
+    {"tipo":"grafico","duracao":2.5,
+     "grafico":{"rotulo":"Preço nos últimos 90 dias","valores":[100,102,99,101,100,100,150,152,150,151,150,106,104],"marcadores":[{"i":6,"texto":"+50% 'aumentou'"},{"i":11,"texto":"-30% 'desconto'"}],"botao":"Ver histórico"},
+     "manchete":[[{"t":"o ","e":"fina"},{"t":"histórico","e":"serifa"},{"t":" não mente","e":"fina"}]]},
+    {"tipo":"rajada","duracao":2.5,
+     "rajada":[{"icone":"Search","texto":"PESQUISE"},{"icone":"LineChart","texto":"HISTÓRICO"},{"icone":"Scale","texto":"COMPARE"},{"icone":"ShieldCheck","texto":"CONFIRA"},{"icone":"BadgeCheck","texto":"COMPRE"}],
+     "manchete":[[{"t":"5 passos ","e":"fina"},{"t":"simples","e":"serifa"}]]},
+    {"tipo":"checklist","duracao":2.5,
+     "checklist":["Compare","Espere","Confirme"],
+     "manchete":[[{"t":"antes de ","e":"fina"},{"t":"comprar","e":"serifa"}]]},
+    {"tipo":"fecho","duracao":2.8,
+     "fecho":{"pergunta":"Você está pronto... para comprar sem cair em golpe?","cta":"Siga para mais"}}
+  ]
+}
