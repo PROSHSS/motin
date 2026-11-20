@@ -1,18 +1,14 @@
 import React from 'react';
 import {Composition, staticFile} from 'remotion';
 import {Video, VideoProps} from './Video';
-import {validateData} from './data';
-
-async function load(name: string): Promise<unknown> {
-  const response = await fetch(staticFile(name));
-  if (!response.ok) throw new Error(`${name}: falha ao carregar (HTTP ${response.status}).`);
-  try { return await response.json(); } catch { throw new Error(`${name}: JSON inválido.`); }
-}
+import {Showcase, ShowcaseProps, duracaoTotal} from './Showcase';
 
 const FPS = 30;
 
 export const Root: React.FC = () => {
   return (
+    <>
+    <RootShowcase />
     <Composition
       id="Documentario"
       component={Video}
@@ -22,19 +18,46 @@ export const Root: React.FC = () => {
       durationInFrames={FPS * 60}
       defaultProps={{roteiro: {titulo: '', cenas: []}, tempos: [], palavras: []} as VideoProps}
       calculateMetadata={async () => {
-        const [roteiro, tempos, palavras, audio] = await Promise.all([
-          load('roteiro.json'),
-          load('tempos_cenas.json'),
-          load('palavras.json'),
-          load('audio.json').catch(() => ({})),
+        const [roteiro, tempos, palavras, audio, visual] = await Promise.all([
+          fetch(staticFile('roteiro.json')).then((r) => r.json()),
+          fetch(staticFile('tempos_cenas.json')).then((r) => r.json()),
+          fetch(staticFile('palavras.json')).then((r) => r.json()),
+          fetch(staticFile('audio.json'))
+            .then((r) => (r.ok ? r.json() : {musica: false, sfx: false, volumeMusica: 1}))
+            .catch(() => ({musica: false, sfx: false, volumeMusica: 1})),
+          fetch(staticFile('visual.json'))
+            .then((r) => (r.ok ? r.json() : {}))
+            .catch(() => ({})),
         ]);
-        const data = validateData(roteiro, tempos, palavras);
-        const fim = Math.max(...data.tempos.map((t) => t.fim), ...data.palavras.map((p) => p.fim));
+        const fim = tempos.length ? tempos[tempos.length - 1].fim : 60;
         return {
           durationInFrames: Math.ceil((fim + 0.5) * FPS),
-          props: {...data, narracao: typeof audio === 'object' && audio !== null && 'narracao' in audio && audio.narracao === true},
+          props: {roteiro, tempos, palavras, audio, visual},
         };
       }}
     />
+    </>
   );
 };
+
+export const RootShowcase: React.FC = () => (
+  <Composition
+    id="Showcase"
+    component={Showcase}
+    width={1080}
+    height={1920}
+    fps={FPS}
+    durationInFrames={FPS * 20}
+    defaultProps={{dados: {titulo: '', acento: '#c9a24a', modo: 'claro', cenas: []}} as ShowcaseProps}
+    calculateMetadata={async () => {
+      const [dados, audio, tempos, palavras] = await Promise.all([
+        fetch(staticFile('showcase.json')).then((r) => r.json()),
+        fetch(staticFile('audio.json')).then((r) => (r.ok ? r.json() : {})).catch(() => ({})),
+        fetch(staticFile('tempos_cenas.json')).then((r) => (r.ok ? r.json() : [])).catch(() => []),
+        fetch(staticFile('palavras.json')).then((r) => (r.ok ? r.json() : [])).catch(() => []),
+      ]);
+      const fps = dados.fps ?? FPS;
+      return {durationInFrames: duracaoTotal(dados, tempos, fps), fps, props: {dados, audio, tempos, palavras}};
+    }}
+  />
+);
