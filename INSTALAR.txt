@@ -1,0 +1,262 @@
+ATUALIZAÇÃO V8 — VARIAÇÃO AUTOMÁTICA ENTRE VÍDEOS
+Leia LEIA_VARIACOES_AUTOMATICAS.txt. Extraia na mesma pasta e abra painel.bat.
+Voz e personagens preservados; use Nova variação · manter voz para outra montagem.
+
+ATUALIZAÇÃO V7 — EDIÇÃO PRINCIPAL COM MOTION FLUIDO
+Leia LEIA_MOTION_FLUIDO.txt. Extraia na mesma pasta e abra painel.bat.
+A voz e os personagens aprovados foram preservados.
+
+ATUALIZACAO DE VOZ POR REFERENCIA — V6
+Execute o NOVO instalar_voz_mascote.bat. Leia LEIA_PRIMEIRO_PERSONAGENS.txt.
+A voz do personagem usa o audio enviado, com modelos locais (~2,6 GB).
+
+ATUALIZAÇÃO: VOZ MASCULINA SUAVE DO PERSONAGEM, COM A FALA APROVADA COMO BASE
+Leia LEIA_PRIMEIRO_PERSONAGENS.txt para instalar e usar a nova função.
+
+INSTALAR (3 passos)
+
+1) Extraia o ZIP "doc-tiktok-completo.zip" DENTRO da sua pasta  C:\Users\Pedro\doc-tiktok
+   (botao direito > Extrair tudo... > escolha a pasta doc-tiktok > "Substituir os arquivos").
+   Nao apague nada. Ele coloca cada arquivo no lugar certo.
+
+2) criar.bat > opcao 3 (verificar). Tudo deve mostrar [ok]. Se aparecer FALTA, me mande a tela.
+
+3) Criar um video: criar.bat > opcao 1 > digite o tema.  O video fica em  saidas\<tema>.mp4
+
+VERSAO 18 - CORRECAO: PAINEL "CARREGANDO PARA SEMPRE"
+- Causa: quando o tema tinha mais de ~50 letras e ja existia um video com esse tema, o painel entrava num laco sem fim.
+- Agora o tema fica INTEIRO (titulo do video sem cortes) e so o nome da pasta ganha numero (-2, -3...).
+- O painel avisa "Arquivos enviados, preparando..." e, se demorar demais, manda olhar "Meus videos".
+
+VERSAO 17 - RELATORIO DE CONFIANCA, PACOTE DE POSTAGEM E LOTE
+- Ao terminar, cada video ganha um VEREDITO: "PRONTO PARA POSTAR", "CONFERIR ANTES DE POSTAR" ou "NAO POSTAR (corrigir antes)",
+  com a lista do que foi conferido (audio, tela preta, quantidade de fatos com fonte, fontes na tela, ajustes de texto, imagens de IA).
+  Aparece em "Meus videos" e em saidas\<tema>_RELATORIO.txt. Assunto serio sempre pede leitura do CONFERIR.
+- PACOTE DE POSTAGEM: saidas\<tema>_POSTAGEM.txt com a legenda pronta para colar (com fontes), hashtags e 3 opcoes de titulo para a capa.
+- LOTE: no painel, o campo "Varios videos de uma vez" aceita um tema por linha (ate 12). Entram na fila e sao feitos um apos o outro,
+  mesmo com voce fora do PC.
+
+VERSAO 16 - TEXTO SEM ERRO + SITE MELHORADO
+- CONFERENCIA FINAL DE TEXTO: antes de renderizar, o programa confere TODO texto da tela. Cena com palavra cortada
+  (ex.: "PRESIDEN"), etiqueta terminando em "de/o/que", palavra repetida, parenteses abertos ou "undefined" e trocada
+  automaticamente por uma versao segura (so com a narracao). Palavra de fundo gigante agora e sempre palavra INTEIRA.
+- Lista completa do que aparece no video, cena por cena:  projetos\<tema>\TEXTO_NA_TELA.txt
+- MANCHETES: as palavras agora quebram em linhas inteiras e na ordem certa (antes uma palavra podia ficar fora de ordem).
+- SITE (painel.bat) MELHORADO:
+  * Meus videos: barra de progresso e etapa atual, ASSISTIR o video pronto no proprio site, baixar video/capa,
+    abrir legenda do post, texto na tela e CONFERIR antes de postar, botao "Abrir pasta".
+  * Escolha DURACAO (curto/medio/longo) e ESTILO das imagens de IA por video.
+  * Em cada foto/video voce pode digitar o numero da CENA (1 = abertura) para fixar a foto naquela cena.
+  * Miniaturas dos arquivos, contador de caracteres, rascunho salvo sozinho, botao limpar tudo.
+
+VERSAO 15 - ZONA SEGURA DO TIKTOK, CAPA E DETALHES DE ESTUDIO
+- ZONA SEGURA: legenda, fonte e creditos subiram para nao ficarem escondidos pela descricao/nome da musica/botoes do TikTok.
+- LEGENDA INTELIGENTE: numeros e siglas (ex.: 3 mil, STF) ficam maiores e na cor de destaque o tempo todo.
+- LOOK POR TOM: assunto serio usa cor fria "investigativa" e vinheta mais forte; assunto leve usa o look quente.
+- CAPA: alem do video, sai  saidas\<tema>_capa.png  (quadro de abertura para escolher como capa no TikTok).
+  Nao quer? config.json  "gerar_capa": false.
+- Cena do celular um pouco menor para nao encostar na legenda.
+
+VERSAO 14 - IMAGENS COM CARA DE CINEMA
+- NOVO cinema.py: toda imagem de IA recebe acabamento de cinema (curva de contraste, sombras frias/luzes quentes,
+  menos "brilho de IA", nitidez leve e grao de pelicula). Todas as imagens do video ficam com a MESMA cor e textura.
+  Fotos reais (Wikipedia/Commons) NAO sao alteradas.
+- Imagem vazia/uniforme (geracao que falhou) e descartada e a cena usa a reserva, em vez de aparecer uma tela lisa.
+- Nao gostou? config.json  "grade_cinema": false.
+
+VERSAO 13 - ACABAMENTO PROFISSIONAL
+- CONFERENCIA ANTES DO RENDER: nenhuma cena pode apontar para imagem que nao existe (corrige sozinho; fim do erro "staticFile").
+- CONFERENCIA DEPOIS DO RENDER: o programa confere se o video tem audio, duracao normal, volume e tela preta, e avisa no log
+  ("Conferencia final: ok" ou "ATENCAO ...").
+- VOZ com acabamento de estudio (corta grave de ruido, comprime e realca a presenca). Nao muda o tempo da fala.
+  Nao gostou? config.json  "polir_voz": false.
+- Cenas longas ganham uma "batida" de camera no meio (aproximacao rapida + tique suave), para a tela nunca ficar parada.
+- Barra de progresso agora marca os capitulos (um risco a cada cena).
+
+VERSAO 12 - CORRECAO DO ERRO "undefined was passed to staticFile()"
+- Causa: quando a imagem de IA de uma cena nao era gerada, a cena de reserva era outra cena de foto, sem imagem, e a renderizacao quebrava.
+- Agora a reserva e uma cena de citacao (so texto da narracao) e as cenas de foto aguentam imagem faltando (fundo escuro).
+- "Meus videos" (painel) ganhou o botao "Tentar de novo (continua de onde parou)" nos videos com ERRO.
+  Depois de extrair o ZIP, abra o painel > Meus videos > Tentar de novo no video que deu erro.
+- Se muitas imagens nao forem geradas, e a cota diaria da Cloudflare (~95 imagens/dia): o video sai com menos fotos.
+
+VERSAO 11 - SEM PERGUNTAS + ERROS GUARDADOS
+- Pelo painel, NADA pergunta nada na janela preta. Pode apertar OK e sair do PC.
+- Tudo que antes era pergunta agora e feito no site: o Account ID/token da Cloudflare (aparece uma caixa no topo, so se faltar).
+- Assunto serio: o video e feito sem esperar; ao lado dele sai  <tema>_CONFERIR.txt  com tudo que e falado, a fonte de cada
+  frase e os creditos das fotos reais. LEIA antes de postar. (Se nao houver fontes, o programa ainda se recusa a criar o video serio.)
+- Erros nao se perdem mais: o texto todo fica em projetos\<tema>\log.txt e aparece em "Meus videos" (link no painel,
+  http://127.0.0.1:8765/status), com PRONTO / ERRO / NA FILA. A janela preta nao fecha sozinha.
+- Varios videos de uma vez entram em FILA: um termina e o proximo comeca sozinho.
+- Clicar na janela preta nao pausa mais o programa (modo "QuickEdit" desligado).
+- criar.bat continua funcionando como antes (com perguntas), se voce preferir usar por ele.
+
+VERSAO 10 - VISUAL SERIO + PAINEL (SITE LOCAL)
+- Todo o video agora usa tema ESCURO de documentario (fim das telas claras/vazias com pouco texto).
+- Retiradas as cenas "vazias" (texto pequeno em fundo creme/verde). Sobraram so cenas com conteudo (foto, documento, numero).
+- Se uma cena nao puder usar o modelo planejado, ela vira cena de FOTO (nunca texto solto).
+- FONTE e CREDITO agora aparecem num "terco inferior" (barra colorida + FONTE + nome + data dd/mm/aaaa), sem cobrir o topo.
+- Corrigido: titulo cortado no cabecalho; 3 polaroids com a mesma foto (agora recortes diferentes); celular encostando na legenda.
+- NOVO: PAINEL. De dois cliques em painel.bat: abre uma pagina no navegador (so no seu PC, 127.0.0.1).
+  Digite tema, descricao, narrativa/fatos (uma frase por linha), arraste fotos e videos e clique OK.
+  Abre uma janela preta (CMD) que cria o video. Videos enviados viram 3 quadros (inicio/meio/fim) usados como fotos.
+  Seguranca: usa so o Python que voce ja tem, nao instala nada, nao envia nada para a internet, exige senha aleatoria,
+  aceita so jpg/png/webp/mp4/mov/webm/mkv. Voce confirma na pagina que tem direito de usar os arquivos.
+  Se o tema ja existe, o painel cria outra pasta (tema 2) e nao apaga o video antigo.
+
+VERSAO 9 - EDICAO COM CARA DE DOCUMENTARIO
+- Camera: tremor leve de "camera na mao", aproximacao lenta continua e um pequeno zoom a cada frase falada.
+- Cor de cinema (sombras frias, luzes quentes), vinheta nas bordas e grao de filme vivo.
+- Vazamento de luz laranja a cada corte de cena.
+- Barra de progresso fina no topo (segura o espectador ate o fim).
+- Legenda estilo documentario: texto branco grosso com sombra, sem caixa, palavra falada em cor de destaque.
+  Prefere a caixa antiga? config.json  "legenda": "pilula".
+- Sons novos: drone grave + batida na abertura, clique de projetor nos cortes, papel/foto na mesa, batida grave nos fatos reais.
+- Nao gosta do efeito de camera/cor? config.json  "camada_documentario": false.
+- Observacao: o render fica um pouco mais lento por causa dos efeitos.
+
+VERSAO 8 - SHOWCASE COM CARA DE FOTO REAL (imagens de IA realistas em quase todas as cenas)
+- O padrao agora e IMAGEM DE IA REALISTA (Cloudflare FLUX), como no modo classico, mas dentro do motion do Showcase:
+  * cenas de foto (7 tipos) com camera lenta, cor de destaque tirada da imagem;
+  * NOVO: as cenas animadas (lista, citacao, grafico, documento, gancho...) tambem ganham uma imagem de IA de
+    FUNDO com movimento de camera e escurecimento para o texto ficar legivel.
+- Estilo das imagens (config.json "estilo_imagem"): "realista" (padrao: foto documental, luz natural, textura real),
+  "cinematografico", "editorial" ou "limpo" (visual claro e brilhante da versao antiga).
+- Quantidade: "imagens_por_video": 11 (cota gratis ~95 imagens/dia = ~8 videos) e "max_fotos": 7.
+  Menos imagens = menos uso da cota. Acabou a cota da Cloudflare: o programa usa o servico gratis de reserva.
+- Foto REAL da internet agora so para PESSOAS/instituicoes citadas (retrato da Wikipedia/Commons, com credito).
+  Quer foto real em tudo? config.json "fotos_reais": "auto".
+- Toda imagem de IA fica marcada na tela como "Imagem ilustrativa (gerada por IA)" (so nas cenas de foto)
+  e legenda_post.txt avisa "Imagens ilustrativas geradas por IA".
+- IMPORTANTE: a qualidade realista depende do gerador (FLUX). Se alguma imagem sair com cara de IA/estranha, troque
+  "estilo_imagem" e me mande um exemplo.
+
+VERSAO 7 - AJUSTES FINOS
+- Cena de texto grande (cinetica) agora fica centralizada na tela (antes sobrava metade vazia embaixo).
+- Corrigido: frase terminando em "dos/de/da"; selo "Fonte:" com ponto solto; sem selo de fonte quando
+  o fato foi escrito por voce (fatos.txt).
+- Conferencia OPCIONAL das fotos por IA de visao: config.json "modelo_visao": "qwen3.5:9b" (o seu modelo ja
+  enxerga imagens). O programa mostra cada foto candidata ao modelo e descarta as que nao combinam
+  (logo, mapa, print, assunto errado). Fica mais lento; deixe vazio para desligar.
+
+VERSAO 6 - TUDO AUTOMATICO + EDICAO MELHORADA
+- Fotos reais 100% automaticas (voce nao precisa colocar nada): o programa pega a foto principal da pagina
+  da Wikipedia da pessoa/lugar, procura no Wikimedia Commons e no Openverse (so CC0, dominio publico e CC BY),
+  poe o credito na tela e registra tudo em creditos_fotos.txt. A pasta fotos\ continua existindo, mas e opcional.
+  Fotos de pessoas comuns nunca sao usadas; retrato de pessoa real so vem da Wikipedia/Commons (nunca IA).
+  Obs.: muitos retratos da Wikipedia sao CC BY-SA. Por seguranca ficam DESLIGADOS (config "permitir_cc_by_sa": false).
+  Ligando, entram bem mais retratos, mas essa licenca exige compartilhar o video igual; decida com calma.
+- Cena DOCUMENTO: folha de papel com o que diz a fonte, marca-texto nos numeros e nomes e carimbo CONFERIDO.
+- Transicoes novas e mais fluidas: iris (circulo que abre), chicote lateral com borrao e zoom atravessando a cena;
+  o efeito antigo de esfera ficou bem mais leve. Marca-texto tambem nos numeros do perfil.
+- MODELO DE IA: nao ha prova de que o Llama seja melhor que o seu qwen3.5:9b para este trabalho (JSON em portugues);
+  guias recentes colocam Qwen e Gemma novos a frente do Llama 3.2. A seguranca do sistema vem das FONTES e das
+  PROVAS por frase, nao do tamanho do modelo. Se quiser testar outro, o programa BAIXA SOZINHO:
+     python criar.py "tema" --modelo gemma4:12b          (so desta vez; mais lento, ~8 GB)
+     config.json: "modelo_juiz": "gemma4:12b"             (usa o maior SO para conferir as frases)
+  Teste e compare; se ficar lento demais, volte ao padrao. (Com 16 GB de RAM nao rode modelos acima de ~14B.)
+
+VERSAO 5 - CENA "FATO REAL" (estilo perfil documental, igual ao video de referencia)
+- Parede de papel, objeto real que entra em 3D e sai com borrao, retrato que sobe dentro de um circulo,
+  nome digitado em letra grande, explicacao linha por linha e, no fim, a tela escurece e o NUMERO real
+  conta ate o valor com brilho. Aparece sozinha quando um ponto do roteiro tem nome ou numero real.
+- Tudo vem da narracao e das fontes (nome, linhas, numero): nada inventado.
+- Retrato: foto real livre (Commons) ou SUA, em projetos\<tema>\fotos\ :
+     cena3.jpg           retrato / foto principal da cena 3
+     cena3_objeto.jpg    objeto real (cedula, documento, produto...) que entra em 3D
+     cena3_recorte.png   (opcional) a pessoa SEM fundo (PNG transparente); se nao tiver, usa circulo
+  Com cena3_objeto ou cena3_recorte na pasta, a cena 3 vira automaticamente "fato real".
+- Retrato de PESSOA REAL nunca e gerado por IA (evita mostrar uma pessoa errada): sem foto real, a cena muda.
+- Recorte automatico (opcional): no terminal  pip install rembg onnxruntime  (baixa um modelo na 1a vez).
+  config.json: "recorte": "auto" | "nunca"
+
+VERSAO 4 - FOTOS REAIS E TEXTO SEM ERRO
+- Fotos reais livres de direito autoral (Wikimedia Commons: so CC0/dominio publico/CC BY) ou da sua pasta
+  projetos\<tema>\fotos\ com creditos. O credito aparece na tela. LEIA o GUIA_FOTOS.txt.
+- Imagens de IA ficam marcadas como "Imagem ilustrativa".
+- Corrigido: palavras cortadas no meio (ex.: PRESIDEN), frases terminando em "de/da/e", artigo solto
+  antes da palavra em destaque, espaco/pontuacao e palavra repetida nos textos.
+
+VERSAO 3 - RITMO E ROTEIRO
+- Roteiro com estrutura de historia: gancho > contexto > desenvolvimento > "o que isso significa" > fecho,
+  11 pontos (~70 s), frases faladas e naturais com conectores.
+- Video mais calmo: fala a 94% da velocidade, pausa entre cenas e cada cena dura ~20% mais.
+  Ajuste no config.json:  "ritmo_fala": 0.90 (mais lento) | "respiro": 0.5 | "n_pontos": 8 (mais curto)
+- Legendas em frases de ate 4 palavras que ficam pelo menos 1,1 s na tela.
+
+O QUE MUDOU NA VERSAO 2
+- Fotos: ate 6 por video (config.json "max_fotos"). A edicao Showcase e montada em volta de cada foto
+  (7 tipos de cena de foto) e a cor de destaque sai da propria imagem.
+- Sem repeticao: o plano de cenas nunca repete o mesmo tipo em sequencia e varia entre cenas Showcase,
+  fotos e cenas classicas.
+- Sem texto errado: toda palavra e numero na tela e conferido; texto que nao cabe encolhe sozinho
+  (nada sai da tela); palavra sem sentido e trocada.
+- Dados corretos: o programa pesquisa na internet (noticias, Wikipedia, Banco Central/IBGE), guarda a data
+  e so deixa uma frase entrar se ela tiver prova (trecho exato) nas fontes. Numero ou nome que nao
+  esta nas fontes e barrado.
+- Tema SERIO (politica, saude, crime, dinheiro, eleicao, lei...): verificacao maxima, aviso na tela,
+  fonte na tela, e o programa MOSTRA as frases com a fonte e pergunta "Esta tudo correto? S/N" antes
+  de gastar tempo com voz e video. Sem fontes suficientes ele PARA em vez de inventar.
+- Arquivos novos em projetos\<tema>\ :  roteiro_para_conferir.txt (cada frase + prova)
+  e legenda_post.txt (titulo, aviso e fontes para colar no post).
+
+IMPORTANTE (honestidade): nenhuma IA local garante 100%. Por isso o sistema so usa o que as fontes
+comprovam e, em tema serio, voce confirma antes. Para assunto delicado, o melhor e escrever em
+fatos.txt (uma frase conferida por linha) - eu posso pesquisar e montar esse fatos.txt para voce.
+
+OPCOES (terminal, so se quiser):
+  python criar.py "tema" --repesquisar      atualiza a pesquisa (dados do dia)
+  python criar.py "tema" --fatos fatos.txt  usa seus fatos conferidos
+  python criar.py "tema" --serio | --normal forca o modo
+  python criar.py "tema" --sem-aprovar      nao pergunta S/N (lote)
+  python criar.py "tema" --sem-imagens | --so-showcase | --mistura 0.5 | --estilo noite_neon
+  python criar.py "tema" --refazer-voz | --rerender | --novo | --sem-musica
+
+PODE APAGAR (antigos): criar_showcase.py, showcase.bat, LEIAME_SHOWCASE.txt, src\ShowcaseObjetos.tsx.
+MANTENHA: config.json, voz_referencia.wav, align.py, tts_kokoro.py, musicas\, node_modules\.
+
+
+=====================================================================
+VERSAO 19 - MAIS VARIEDADE (cenas, cores e transicoes)
+=====================================================================
+Atualizar: extraia o ZIP POR CIMA da pasta doc-tiktok (seu config.json nao e tocado).
+Novidades:
+ - 6 tipos NOVOS de cena de motion (inspirados nos videos de referencia): CARTAZ (palavras batendo numa tela
+   inclinada, uma riscada), FOTO EM MOLDURA (foto com palavras brilhando), BUSCA (barra de pesquisa digitando),
+   PILULA (fundo colorido com a palavra-chave numa pilula), GLITCH (palavra gigante com efeito RGB) e
+   PASTA (3 cartoes coloridos em leque). Todo texto vem da narracao/evidencia (montado por programa, sem inventar).
+ - O planejador escolhe os tipos conforme o texto de cada ponto, sem repetir seguido.
+ - 11 transicoes diferentes entre cenas (antes 8) e cada video sorteia uma paleta escura propria.
+ - Textos nas cenas novas usam contraste garantido (nunca da mesma cor do fundo).
+ - Arquivo novo: src/showcase/CenasVar.tsx (ja vai no ZIP).
+
+VERSAO 19b - SEM ZOOM VAI-E-VOLTA
+ - Removidos os pulsos de zoom a cada frase e as "batidas" no meio das cenas. A camera agora so se aproxima bem devagar e continua (nunca vai e volta).
+ - Transicoes com zoom ficaram bem mais suaves.
+
+VERSAO 20 - ANALISADOR DE REFERENCIAS
+ - Novo: referencias.bat / referencias.py. Arraste um ou mais videos de referencia para cima do referencias.bat.
+   Ele mede (localmente, so ffmpeg): numero de cortes, duracao media dos planos, quantidade de movimento, cor de destaque
+   e brilho, e grava um perfil em estilos\ref_NOME.json.
+ - Use com:  python criar.py --estilo ref_NOME   (os perfis tambem entram no sorteio automatico de estilos).
+ - O perfil define ritmo, paleta e quais cenas o sistema prefere. Ele NAO copia a composicao do video: escolhe entre
+   as cenas que o sistema realmente sabe renderizar (cartaz, busca, pilula, glitch, pasta, fotos, etc.).
+ - Transicoes: ja escolhidas pelo tipo da cena anterior e da seguinte (foto->foto dissolve, impacto, interface...), nunca sorteadas soltas.
+
+VERSAO 21 - INSPETOR DE QUALIDADE
+ - Novo: inspetor.py. Depois de renderizar, mede o MP4 (resolucao, h264/aac, quadros lidos x esperados, tela preta,
+   imagem parada, volume em LUFS, pico, silencios, duracao x narracao) e escreve NOME_QUALIDADE.txt ao lado do video
+   (e RELATORIO_QUALIDADE.txt/.json na pasta do projeto): timestamp, categoria, gravidade, evidencia, correcao e verificacao.
+ - Corrige sozinho SO o audio (volume/pico, sem re-renderizar imagem), ate 3 rodadas (config "rodadas_refino"), reverifica e
+   guarda a melhor versao. Os outros problemas sao apenas reportados.
+ - As notas nunca chegam a 100 e cada uma diz o que mediu e o que NAO mede (legibilidade, area segura, estetica, sincronia fina).
+ - Para inspecionar um video qualquer:  python inspetor.py video.mp4   (nao altera o arquivo)
+
+VERSAO 22 - SEM ETIQUETAS DE FONTE/FOTO NA IMAGEM
+ - Novo padrao: show_source_labels = false (config.json). Nenhuma etiqueta "Fonte:", "Foto: ...", nome de site ou
+   "Imagem ilustrativa" e desenhada sobre o video. Nao e faixa preta nem blur: o desenho dessas etiquetas simplesmente nao e gerado.
+ - Os creditos e fontes continuam registrados FORA da imagem: NOME_CREDITOS.txt (ao lado do video), creditos_fotos.txt e o
+   pacote de postagem. Se a licenca de uma foto exigir atribuicao, cole o credito na legenda/comentario.
+ - Para voltar a mostrar no video: "show_source_labels": true no config.json.
+ - Continua na tela (nao sao etiquetas de foto): o cabecalho da folha na cena "documento" (nome da fonte do trecho citado)
+   e o aviso de rodape de assuntos serios (saude/financas).
